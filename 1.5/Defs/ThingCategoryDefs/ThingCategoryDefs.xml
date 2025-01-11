@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Defs>
+
+<ThingCategoryDef>
+    <defName>Aq_Potions</defName>
+    <label>Potions</label>
+    <parent>Manufactured</parent>
+    <iconPath>Things/Item/Manufactured/PotionExtraHealing</iconPath>
+    <resourceReadoutRoot>false</resourceReadoutRoot>
+</ThingCategoryDef>
+
+
+</Defs>
+
