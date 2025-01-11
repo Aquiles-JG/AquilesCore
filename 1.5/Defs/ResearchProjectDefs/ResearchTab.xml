@@ -2,15 +2,14 @@
 <Defs>
   
 <ResearchTabDef>
-    <defName>AquilesResearch</defName>
-    <label>Rimworld Redux</label>
-</ResearchTabDef>
-
-<ResearchTabDef>
 	<defName>Aq_Research</defName>
 	<label>D&amp;D</label>
 </ResearchTabDef>
 
+<ResearchTabDef>
+    <defName>AquilesResearch</defName>
+    <label>Rimworld Redux</label>
+</ResearchTabDef>
 
 <!-- ResearchProject Base-->
 <ResearchProjectDef Name="Aq_TechResearch" Abstract="True">
