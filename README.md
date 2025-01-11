@@ -1,6 +1,6 @@
 # AquilesCore
-A library for the shared dlls. A necessary dependency for every mod of mine. Nothing too fancy and all performance friendly.
+A library for the shared DLLs. A necessary dependency for every mod of my collection. Nothing too fancy or groundbreaking, but all performance friendly.
 
-Art: Aquiles
-C#: Taranchuk
-Concept design: Aquiles
+<p>Art: Aquiles</p>
+<p>C#: Taranchuk</p>
+<p>Concept design: Aquiles</p>
