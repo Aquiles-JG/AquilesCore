@@ -18,7 +18,7 @@
 <ThingDef Name="Aq_DrugPotionBase" ParentName="Aq_DrugBase" Abstract="True">
     <statBases>
       <Mass>0.15</Mass>
-      <SellPriceFactor>0.50</SellPriceFactor>
+      <SellPriceFactor>0.70</SellPriceFactor>
     </statBases>
     <stackLimit>10</stackLimit>
     <uiIconForStackCount>1</uiIconForStackCount>
