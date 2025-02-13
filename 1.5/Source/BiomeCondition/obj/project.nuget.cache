@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "oirQte+v/i/FSRxTUqFYG5B3QgcBA8mqt8uZ1y8W/BgfdpNbMetW3ySQ5lc8phXEavevx6Q3ZmR6gf8cej91Tg==",
+  "success": true,
+  "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\TestMod\\Projects\\BiomeCondition\\BiomeCondition.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.publicizer\\2.2.1\\krafs.publicizer.2.2.1.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\krafs.rimworld.ref\\1.5.4085\\krafs.rimworld.ref.1.5.4085.nupkg.sha512",
+    "C:\\Users\\Vova\\.nuget\\packages\\lib.harmony\\2.3.3\\lib.harmony.2.3.3.nupkg.sha512"
+  ],
+  "logs": []
+}

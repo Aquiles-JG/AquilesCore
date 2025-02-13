@@ -1,0 +1,5 @@
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Projects\HediffRemover\obj\Debug\HediffRemover.csproj.AssemblyReference.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Projects\HediffRemover\obj\Debug\HediffRemover.csproj.CoreCompileInputs.cache
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Projects\Assemblies\HediffRemover.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Projects\HediffRemover\obj\Debug\HediffRemover.dll
+C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Assemblies\HediffRemover.dll
