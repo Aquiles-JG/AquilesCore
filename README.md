@@ -7,7 +7,7 @@ I take my hat off to IcyCheeseCake for the amazing art, Taranchuk for the pricel
 
 # AquilesCore
 <p>A library for the shared DLLs. A necessary dependency for every mod of my modpack. Nothing too fancy or groundbreaking, and all performance friendly.</p>
-<h1>Credits</h1>Credits
+<h3>Credits</h3>
 <p> **Art:** Aquiles</p>
 <p> **C#:** Taranchuk</p>
 <p> **Design:** Aquiles</p>
