@@ -13,3 +13,5 @@ I take my hat off to IcyCheeseCake for the amazing art, Taranchuk for the pricel
 <p> <b>XML and Design:</b> Aquiles</p>
 
 Rimworld is owned by Tynan Sylvester.
+LICENSING:
+This work is licensed under Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International 
