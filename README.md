@@ -6,7 +6,7 @@ Thank you to all Rimworld modders out there, that through the years served me as
 I take my hat off to IcyCheeseCake for the amazing art, Taranchuk for the priceless code and Oskar Potocki for the opportunity to work with a professional modder.
 
 # AquilesCore
-A library for the shared DLLs. A necessary dependency for every mod of my modpack. Nothing too fancy or groundbreaking, and all performance friendly.
+<p>A library for the shared DLLs. A necessary dependency for every mod of my modpack. Nothing too fancy or groundbreaking, and all performance friendly.</p>
 CREDITS
 <p>Art: Aquiles</p>
 <p>C#: Taranchuk</p>
