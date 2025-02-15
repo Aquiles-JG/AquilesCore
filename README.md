@@ -1,4 +1,4 @@
-<h2>My collection of Rimworld mods</h2>
+<center><h2>MY COLLECTION OF RIMWORLD MODS</h2></center>
 <p>Modding is my hobby. I am a middle-aged man that enjoys modding games more than actually playing them. A hopeless D&D nostalgic. I have been working on these projects for many years now. Hopefully for many more. I only use GitHub for safekeeping and backup purposes. All mods here, including this one, are for private use only.</p>
 
 Thank you to all Rimworld modders out there, that through the years served me as inspiration and example to fuel countless hours of time spent in this passion.
