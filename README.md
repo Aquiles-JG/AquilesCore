@@ -7,8 +7,8 @@ I take my hat off to IcyCheeseCake for the amazing art, Taranchuk for the pricel
 
 # AquilesCore
 <p>A library for the shared DLLs. A necessary dependency for every mod of my modpack. Nothing too fancy or groundbreaking, and all performance friendly.</p>
-CREDITS
-<p> **Art:** Aquiles</p>
-<p> **C#:** Taranchuk</p>
-<p> **Design:** Aquiles</p>
+<h2>CREDITS</h2>
+<p> <**>Art:</**> Aquiles</p>
+<p> <**>C#:</**> Taranchuk</p>
+<p> <**>Design:</**> Aquiles</p>
 Rimworld is owned by Tynan Sylvester.
