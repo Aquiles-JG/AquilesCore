@@ -1,4 +1,4 @@
-<center><h2>MY COLLECTION OF RIMWORLD MODS</h2></center>
+<h2><center>MY COLLECTION OF RIMWORLD MODS</center></h2>
 <p>Modding is my hobby. I am a middle-aged man that enjoys modding games more than actually playing them. A hopeless D&D nostalgic. I have been working on these projects for many years now. Hopefully for many more. I only use GitHub for safekeeping and backup purposes. All mods here, including this one, are for private use only.</p>
 
 Thank you to all Rimworld modders out there, that through the years served me as inspiration and example to fuel countless hours of time spent in this passion.
@@ -7,7 +7,7 @@ I take my hat off to IcyCheeseCake for the amazing art, Taranchuk for the pricel
 
 # AquilesCore
 <p>A library for the shared DLLs. A necessary dependency for every mod of my modpack. Nothing too fancy or groundbreaking, and all performance friendly.</p>
-<h2>CREDITS</h2>
+<h2>Credits</h2>
 <p> <b>Art:</b> Aquiles</p>
 <p> <b>C#:</b> Taranchuk</p>
 <p> <b>Design:</b> Aquiles</p>
