@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+ 	<GeneDef>
+		<defName>SmallBuild</defName>
+		<label>small build</label>
+		<description>Carriers of this gene are a smaller size than usual.</description>
+		<iconPath>UI/Genes/SmallBody</iconPath>
+		<exclusionTags>
+			<li>AG_BodySize</li>
+		</exclusionTags>
+		<statFactors>
+			<Mass>0.90</Mass>
+			<MeatAmount>0.85</MeatAmount>
+			<LeatherAmount>0.85</LeatherAmount>
+			<VEF_CosmeticBodySize_Multiplier MayRequire="OskarPotocki.VanillaFactionsExpanded.Core">0.8</VEF_CosmeticBodySize_Multiplier>
+		</statFactors>
+		<displayOrderInCategory>0</displayOrderInCategory>
+		<biostatCpx>1</biostatCpx>
+		<biostatMet>+1</biostatMet>
+		<selectionWeight>0</selectionWeight>
+	</GeneDef>	
+	
+</Defs>
