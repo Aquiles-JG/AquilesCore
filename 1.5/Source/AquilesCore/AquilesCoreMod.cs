@@ -21,7 +21,7 @@ namespace AquilesCore
             if (map != null)
             {
                 IntVec3 cell = UI.MouseCell();
-                __result += $" ({cell.x}, {cell.z})";
+                __result += $" ({cell.x}, 0, {cell.z})";
             }
         }
     }
