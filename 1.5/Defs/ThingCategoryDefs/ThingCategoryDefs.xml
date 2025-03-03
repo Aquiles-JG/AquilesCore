@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-
-<Defs>
+<Defs>  
 
 <ThingCategoryDef>
     <defName>Aq_Condiments</defName>
@@ -9,10 +8,10 @@
     <iconPath>Things/Item/Condiments/Aq_Salt</iconPath>
     <resourceReadoutRoot>false</resourceReadoutRoot>
 </ThingCategoryDef>
-    
+	
 <ThingCategoryDef>
     <defName>Aq_Potions</defName>
-    <label>Potions</label>
+    <label>potions</label>
     <parent>Manufactured</parent>
     <iconPath>Things/Item/Manufactured/PotionExtraHealing</iconPath>
     <resourceReadoutRoot>false</resourceReadoutRoot>
