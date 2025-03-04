@@ -2,14 +2,6 @@
 <Defs>  
 
 <ThingCategoryDef>
-    <defName>Aq_Condiments</defName>
-  	<label>condiments</label>
-    <parent>FoodRaw</parent>
-    <iconPath>Things/Item/Condiments/Aq_Salt</iconPath>
-    <resourceReadoutRoot>false</resourceReadoutRoot>
-</ThingCategoryDef>
-	
-<ThingCategoryDef>
     <defName>Aq_Potions</defName>
     <label>potions</label>
     <parent>Manufactured</parent>
