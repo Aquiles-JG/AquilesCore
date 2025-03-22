@@ -10,6 +10,14 @@
   </ThingCategoryDef>
   
   <ThingCategoryDef>
+    <defName>Aq_Oils</defName>
+    <label>herbal oils</label>
+    <parent>Manufactured</parent>
+    <resourceReadoutRoot>false</resourceReadoutRoot>
+    <iconPath>Things/Item/Manufactured/HenbaneOil</iconPath>
+  </ThingCategoryDef>
+  
+  <ThingCategoryDef>
     <defName>Aq_Potions</defName>
     <label>potions</label>
     <parent>Manufactured</parent>
