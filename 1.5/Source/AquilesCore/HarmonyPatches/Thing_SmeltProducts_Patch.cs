@@ -23,19 +23,15 @@ namespace AquilesCore
                     // Handle guaranteed first product
                     if (extension.guaranteeFirstProduct)
                     {
-                        // Check if there are products to guarantee and picks remaining
-                        if (availableProducts.Count > 0 && picksRemaining > 0)
+                        var firstProductDefCount = availableProducts[0];
+                        var firstThing = ThingMaker.MakeThing(firstProductDefCount.thingDef);
+                        firstThing.stackCount = firstProductDefCount.count;
+                        selectedProducts.Add(firstThing);
+                        if (extension.allowDuplicateItems is false)
                         {
-                            var firstProductDefCount = availableProducts[0];
-                            var firstThing = ThingMaker.MakeThing(firstProductDefCount.thingDef);
-                            firstThing.stackCount = firstProductDefCount.count;
-                            selectedProducts.Add(firstThing);
-                            if (extension.allowDuplicateItems)
-                            {
-                                availableProducts.RemoveAt(0); // Remove the first item from available pool
-                            }
-                            picksRemaining--;
+                            availableProducts.RemoveAt(0); // Remove the first item from available pool
                         }
+                        picksRemaining--;
                     }
 
                     // Randomly select remaining products
