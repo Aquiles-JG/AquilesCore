@@ -13,29 +13,50 @@ namespace AquilesCore
             if (extension != null && extension.randomSmeltProductsCount.HasValue && __instance.def.smeltProducts != null)
             {
                 var originalProducts = __instance.def.smeltProducts;
-                if (originalProducts != null && originalProducts.Count > 0)
+                // Ensure count > 0 to avoid errors later
+                if (originalProducts != null && originalProducts.Count > 0 && extension.randomSmeltProductsCount.Value > 0)
                 {
                     var selectedProducts = new List<Thing>();
                     var availableProducts = new List<ThingDefCountClass>(originalProducts);
-                    for (int i = 0; i < extension.randomSmeltProductsCount.Value; i++)
+                    int picksRemaining = extension.randomSmeltProductsCount.Value;
+
+                    // Handle guaranteed first product
+                    if (extension.guaranteeFirstProduct)
                     {
-                        ThingDefCountClass productDefCount;
-                        if (extension.allowDuplicateItems)
+                        // Check if there are products to guarantee and picks remaining
+                        if (availableProducts.Count > 0 && picksRemaining > 0)
                         {
-                            productDefCount = availableProducts.RandomElement();
+                            var firstProductDefCount = availableProducts[0];
+                            var firstThing = ThingMaker.MakeThing(firstProductDefCount.thingDef);
+                            firstThing.stackCount = firstProductDefCount.count;
+                            selectedProducts.Add(firstThing);
+                            if (extension.allowDuplicateItems)
+                            {
+                                availableProducts.RemoveAt(0); // Remove the first item from available pool
+                            }
+                            picksRemaining--;
                         }
-                        else
+                    }
+
+                    // Randomly select remaining products
+                    for (int i = 0; i < picksRemaining; i++)
+                    {
+                        // Check if there are still products available, especially if duplicates aren't allowed
+                        if (availableProducts.Count == 0)
                         {
-                            productDefCount = availableProducts.RandomElement();
-                            availableProducts.Remove(productDefCount);
+                            break; // No more products to pick from
                         }
 
-                        if (productDefCount != null)
+                        var productDefCount = availableProducts.RandomElement();
+                        if (extension.allowDuplicateItems)
                         {
-                            var thing = ThingMaker.MakeThing(productDefCount.thingDef);
-                            thing.stackCount = productDefCount.count;
-                            selectedProducts.Add(thing);
+                            // If duplicates not allowed, pick and remove
+                            availableProducts.Remove(productDefCount);
                         }
+                        // Create and add the thing
+                        var thing = ThingMaker.MakeThing(productDefCount.thingDef);
+                        thing.stackCount = productDefCount.count;
+                        selectedProducts.Add(thing);
                     }
                     foreach (var item in selectedProducts)
                     {

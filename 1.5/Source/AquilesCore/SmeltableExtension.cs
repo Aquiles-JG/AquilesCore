@@ -6,5 +6,6 @@ namespace AquilesCore
     {
         public int? randomSmeltProductsCount;
         public bool allowDuplicateItems = true;
+        public bool guaranteeFirstProduct = false;
     }
 }
