@@ -13,7 +13,7 @@ public class StatPart_BeautyFactor : StatPart
 
         var beauty = pawn.GetStatValue(StatDefOf.PawnBeauty);
         var offset = GetOffset(beauty);
-        return "StatsReport_BeautyOffset".Translate() + ": " + offset.ToStringPercentSigned();
+        return "StatsReport_BeautyOffset".Translate() + ": " + offset.ToStringPercentSigned("0.#");
     }
 
     public override void TransformValue(StatRequest req, ref float val)
