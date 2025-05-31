@@ -96,15 +96,15 @@
             <stages>
                 <li>
                     <label>physically unsightly</label>
-                    <baseOpinionOffset>-15</baseOpinionOffset>
+                    <baseOpinionOffset>-20</baseOpinionOffset>
                 </li>
                 <li>
                     <label>physically hideous</label>
-                    <baseOpinionOffset>-30</baseOpinionOffset>
+                    <baseOpinionOffset>-40</baseOpinionOffset>
                 </li>
                 <li>
                     <label>physically repulsive</label>
-                    <baseOpinionOffset>-45</baseOpinionOffset>
+                    <baseOpinionOffset>-60</baseOpinionOffset>
                 </li>
             </stages>
         </value>
