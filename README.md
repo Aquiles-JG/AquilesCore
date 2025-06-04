@@ -1,6 +1,6 @@
 <h2><center>MY COLLECTION OF RIMWORLD MODS</center></h2>
 <p>Modding is my hobby. I am a middle-aged man that enjoys modding games more than actually playing them. A hopeless D&D nostalgic. I have been working on these projects for many years now. Hopefully for many more. I only use GitHub for safekeeping and backup purposes. All mods here, including this one, are for private use only.</p>
-<p>-Aquiles Alchemy -> overhaul of the production chains of the game, similar to Rimworld Hardcore SK, but in a much smaller scale.</p>
+<p>-Aquiles Alchemy -> overhaul of the production chains, similar to Rimworld Hardcore SK, but in a much smaller scale.</p>
 <p>-Rimworld Cooking Redux -> overhaul of the food system. No more nameless meals on trays!</p>
 <p>-Rimworld Races: Dwarves -> Dwarven faction inspired on D&D (apparel, furniture, weapons, etc.).</p>
 <p>-Rimworld Races: Elves -> Elves and Dark Elves factions inspired on D&D (apparel, furniture, weapons, etc.).</p>
