@@ -11,7 +11,7 @@
   
   <ThingCategoryDef>
     <defName>Aq_Oils</defName>
-    <label>vegetable oils</label>
+    <label>herbal oils</label>
     <parent>Manufactured</parent>
     <resourceReadoutRoot>false</resourceReadoutRoot>
     <iconPath>Things/Item/Manufactured/HenbaneOil</iconPath>
