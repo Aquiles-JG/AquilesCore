@@ -1,5 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Projects\Assemblies\XenotypeRestrictions.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Projects\XenotypeRestrictions\obj\Debug\XenotypeRestrictions.csproj.AssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Projects\XenotypeRestrictions\obj\Debug\XenotypeRestrictions.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Projects\XenotypeRestrictions\obj\Debug\XenotypeRestrictions.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\TestMod\Assemblies\XenotypeRestrictions.dll
