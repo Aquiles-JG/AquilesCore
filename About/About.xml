@@ -6,7 +6,8 @@
 	<url></url>
 	<supportedVersions>
 		<li>1.5</li>
-  	</supportedVersions>
+  	        <li>1.6</li>
+      </supportedVersions>
 	<packageId>Aquiles.Core</packageId>
 	<description>A library of the dlls shared by my mods and very little else. Everything is performance friendly. Not every mod needs every dll.</description>
 	<modDependencies>

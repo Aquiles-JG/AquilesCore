@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  
+<ResearchTabDef>
+	<defName>Aq_Research</defName>
+	<label>D&amp;D</label>
+</ResearchTabDef>
+
+<ResearchTabDef>
+    <defName>AquilesResearch</defName>
+    <label>Rimworld Redux</label>
+</ResearchTabDef>
+
+<!-- ResearchProject Base-->
+<ResearchProjectDef Name="Aq_TechResearch" Abstract="True">
+    <tab>AquilesResearch</tab>
+</ResearchProjectDef>
+
+</Defs>

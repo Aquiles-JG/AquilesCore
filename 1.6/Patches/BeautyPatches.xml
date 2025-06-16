@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+            <li Class="PatchOperationTest">
+                <xpath>/Defs/StatDef[defName="NegotiationAbility"]/parts</xpath>
+                <success>Invert</success>
+            </li>
+            <li Class="PatchOperationAdd">
+                <xpath>/Defs/StatDef[defName="NegotiationAbility"]</xpath>
+                <value>
+                    <parts/>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/StatDef[defName="NegotiationAbility"]/parts</xpath>
+        <value>
+            <li Class="AquilesCore.StatPart_BeautyFactor" />
+        </value>
+    </Operation>
+	
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Ideology</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/StatDef[defName="ConversionPower"]/parts</xpath>
+					<value>
+						<li Class="AquilesCore.StatPart_BeautyFactor" />
+					</value>
+				</li>
+			</operations>
+        </match>
+    </Operation>
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/StatDef[defName="TradePriceImprovement"]/parts</xpath>
+        <value>
+            <li Class="AquilesCore.StatPart_BeautyFactor" />
+        </value>
+    </Operation>
+	
+    <Operation Class="PatchOperationSequence">
+        <success>Always</success>
+        <operations>
+            <li Class="PatchOperationTest">
+                <xpath>/Defs/StatDef[defName="SocialImpact"]/parts</xpath>
+                <success>Invert</success>
+            </li>
+            <li Class="PatchOperationAdd">
+                <xpath>/Defs/StatDef[defName="SocialImpact"]</xpath>
+                <value>
+                    <parts/>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+	
+    <Operation Class="PatchOperationAdd">
+        <xpath>/Defs/StatDef[defName="SocialImpact"]/parts</xpath>
+        <value>
+            <li Class="AquilesCore.StatPart_BeautyFactor" />
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThoughtDef[defName="Pretty"]/stages</xpath>
+        <value>
+            <stages>
+                <li>
+                    <label>physically appealing</label>
+                    <baseOpinionOffset>20</baseOpinionOffset>
+                </li>
+                <li>
+                    <label>physically stunning</label>
+                    <baseOpinionOffset>40</baseOpinionOffset>
+                </li>
+                <li>
+                    <label>physically gorgeous</label>
+                    <baseOpinionOffset>60</baseOpinionOffset>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+
+    <Operation Class="PatchOperationReplace">
+        <xpath>/Defs/ThoughtDef[defName="Ugly"]/stages</xpath>
+        <value>
+            <stages>
+                <li>
+                    <label>physically unsightly</label>
+                    <baseOpinionOffset>-20</baseOpinionOffset>
+                </li>
+                <li>
+                    <label>physically hideous</label>
+                    <baseOpinionOffset>-40</baseOpinionOffset>
+                </li>
+                <li>
+                    <label>physically repulsive</label>
+                    <baseOpinionOffset>-60</baseOpinionOffset>
+                </li>
+            </stages>
+        </value>
+    </Operation>
+</Patch>

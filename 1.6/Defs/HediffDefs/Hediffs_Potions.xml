@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <HediffDef>
+    <defName>Aq_MindConfusion</defName>
+    <label>utterly confused</label>
+    <description>Woozy and lost in your own thoughts.</description>
+    <hediffClass>Hediff_High</hediffClass>
+    <defaultLabelColor>(252, 209, 42)</defaultLabelColor>
+    <scenarioCanAdd>true</scenarioCanAdd>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.8</severityPerDay>
+        <showHoursToRecover>false</showHoursToRecover>
+      </li>
+    </comps>
+    <stages>
+      <li>
+        <painFactor>0.8</painFactor>
+        <vomitMtbDays>0.25</vomitMtbDays>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <setMax>0.7</setMax>
+          </li>
+          <li>
+            <capacity>Moving</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Manipulation</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Talking</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Metabolism</capacity>
+            <offset>-0.2</offset>
+          </li>
+          <li>
+            <capacity>Sight</capacity>
+            <offset>-0.15</offset>
+          </li>
+        </capMods>
+        <forgetMemoryThoughtMtbDays>5</forgetMemoryThoughtMtbDays>
+        <mentalStateGivers>
+          <li>
+            <mentalState>WanderConfused</mentalState>
+            <mtbDays>5</mtbDays>
+          </li>
+        </mentalStateGivers>
+      </li>
+    </stages>
+  </HediffDef>
+  
+</Defs>

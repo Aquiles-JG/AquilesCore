@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <ThingCategoryDef>
+    <defName>Aq_Fruit</defName>
+    <label>fruits</label>
+    <parent>PlantFoodRaw</parent>
+    <resourceReadoutRoot>false</resourceReadoutRoot>
+    <iconPath>Things/Item/Resource/PlantFoodRaw/Berries</iconPath>
+  </ThingCategoryDef>
+  
+  <ThingCategoryDef>
+    <defName>Aq_Oils</defName>
+    <label>herbal oils</label>
+    <parent>Manufactured</parent>
+    <resourceReadoutRoot>false</resourceReadoutRoot>
+    <iconPath>Things/Item/Manufactured/HenbaneOil</iconPath>
+  </ThingCategoryDef>
+  
+  <ThingCategoryDef>
+    <defName>Aq_Potions</defName>
+    <label>potions</label>
+    <parent>Manufactured</parent>
+    <resourceReadoutRoot>false</resourceReadoutRoot>
+    <iconPath>Things/Item/Manufactured/PotionExtraHealing</iconPath>
+  </ThingCategoryDef>
+  
+</Defs>
