@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <StatDef>
+    <defName>Aq_FuelPower</defName>
+    <label>fuel power</label>
+    <description>Determines the efficiency of this resource as fuel. Higher values mean slower consumption rates.</description>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <alwaysHide>false</alwaysHide>
+    <showIfUndefined>false</showIfUndefined>
+    <category>BasicsNonPawnImportant</category>
+    <toStringStyle>PercentZero</toStringStyle>
+    <displayPriorityInCategory>4010</displayPriorityInCategory>
+  </StatDef>
+  
+</Defs>
