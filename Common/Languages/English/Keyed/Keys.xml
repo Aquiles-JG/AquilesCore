@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
 	<StatsReport_BeautyOffset>Beauty Modifier</StatsReport_BeautyOffset>
+	<AC_TabFuelFilter>Fuel</AC_TabFuelFilter>
+	<AC_NoFuel>No fuel</AC_NoFuel>
+	<AC_LimitCapacityTo>Limit capacity to: {0}</AC_LimitCapacityTo>
+	<AC_RefuelAtPercent>Refuel at: {0}</AC_RefuelAtPercent>
+	<AC_FuelSearchRadius>Fuel search radius: {0}</AC_FuelSearchRadius>
+	<AC_FuelPower>Fuel power: {0}</AC_FuelPower>
 </LanguageData>
