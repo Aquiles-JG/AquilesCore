@@ -11,7 +11,7 @@ public static class CompRefuelable_ShouldAutoRefuelNow_Patch
         float currentFuelPercent = __instance.Fuel / __instance.TargetFuelLevel;
         if (currentFuelPercent < fuelData.refuelAt)
         {
-            __result = true;
+            __result = __instance.ShouldAutoRefuelNowIgnoringFuelPct;
             return false;
         }
         return true;
