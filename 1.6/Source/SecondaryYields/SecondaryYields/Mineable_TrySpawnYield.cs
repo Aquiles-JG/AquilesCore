@@ -1,6 +1,7 @@
 using HarmonyLib;
 using RimWorld;
 using System;
+using System.Linq;
 using Verse;
 
 namespace SecondaryYields
@@ -14,7 +15,8 @@ namespace SecondaryYields
 			if (modExtension != null && Rand.Chance(modExtension.chanceToSpawnSecondaryOutput))
 			{
 				YieldOutput yieldOutput = modExtension.yieldOutputThings.RandomElement();
-				Thing thing2 = ThingMaker.MakeThing(yieldOutput.thingDef);
+				ThingDef defToMake = yieldOutput.GetThingDef();
+				Thing thing2 = ThingMaker.MakeThing(defToMake);
 				thing2.stackCount = yieldOutput.quantityRange.RandomInRange;
 				GenPlace.TryPlaceThing(thing2, __instance.Position, map, ThingPlaceMode.Near, ForbidIfNecessary);
 			}
