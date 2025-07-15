@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+    <Operation Class="PatchOperationReplace">
+        <xpath>Defs/WorkGiverDef[defName="Fish"]/workType</xpath>
+        <value>
+            <workType>Aq_Fishing</workType>
+        </value>
+    </Operation>
+	
+	<Operation Class="PatchOperationReplace">
+		<xpath>/Defs/WorkTypeDef[defName="Hunting"]/description</xpath>
+		<value>
+		  <description>Kill animals which are designated to be hunted.</description>
+		</value>
+	</Operation>
+</Patch>
