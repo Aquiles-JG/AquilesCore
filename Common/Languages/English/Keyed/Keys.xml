@@ -7,4 +7,6 @@
 	<AC_RefuelAtPercent>Refuel at: {0}</AC_RefuelAtPercent>
 	<AC_FuelSearchRadius>Fuel search radius: {0}</AC_FuelSearchRadius>
 	<AC_FuelPower>Fuel power: {0}</AC_FuelPower>
+	<Aq_NeedsOceanWater>Needs to be placed on ocean water.</Aq_NeedsOceanWater>
+	<Aq_CannotPlaceCloseToOther>Cannot place close to near {0}.</Aq_CannotPlaceCloseToOther>
 </LanguageData>
