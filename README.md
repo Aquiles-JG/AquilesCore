@@ -1,10 +1,10 @@
 <h2><center>MY COLLECTION OF RIMWORLD MODS</center></h2>
 <p>Modding is my hobby. I am a middle-aged man that enjoys modding games more than actually playing them. A hopeless D&D nostalgic. I have been working on these projects for many years now. Hopefully for many more. I only use GitHub for safekeeping and backup purposes. All mods here, including this one, are for private use only.</p>
-<p>*<b>Aquiles Alchemy:</b> Overhaul of the game, similar to Rimworld Hardcore SK, but in a much smaller scale.</p>
-<p>*<b>Rimworld Cooking Redux:</b> Overhaul of the food system. No more nameless meals on trays!</p>
-<p>*<b>Rimworld Races-Dwarves:</b> Dwarf faction inspired on D&D (apparel, furniture, weapons, etc.).</p>
-<p>*<b>Rimworld Races-Elves:</b> Elves and Dark Elves factions inspired on D&D (apparel, furniture, weapons, etc.).</p>
-<p>*<b>Rimworld Races-Humanoids:</b> Minotaur, Lizardmen, Goblin and Orc factions inspired on D&D (apparel, furniture, weapons, etc.).</p>
+<p>*<b>Aquiles Alchemy:</b> Overhaul of the game, similar to Rimworld Hardcore SK, but in a much, much smaller scale. [private]</p>
+<p>*<b>Rimworld Cooking Redux:</b> Overhaul of the food system. No more nameless meals on trays! [public]</p>
+<p>*<b>Rimworld Races-Dwarves:</b> Dwarf faction inspired on D&D (apparel, furniture, weapons, etc.). [private]</p>
+<p>*<b>Rimworld Races-Elves:</b> Elves and Dark Elves factions inspired on D&D (apparel, furniture, weapons, etc.). [private]</p>
+<p>*<b>Rimworld Races-Humanoids:</b> Minotaur, Lizardmen, Goblin and Orc factions inspired on D&D (apparel, furniture, weapons, etc.). [public]</p>
 <p>*<b>Aquiles Monstrous Compendium:</b> Bestiarium of fantasy monsters.</p>
 My heartful gratitude to all Rimworld modders out there, that through the years served me as inspiration and example to fuel countless hours of time spent in this passion.
 <h3>Special thanks</h3>
