@@ -4,7 +4,7 @@
 <p>*<b>Rimworld Cooking Redux:</b> Overhaul of the food system. No more nameless meals on trays! [public]</p>
 <p>*<b>Rimworld Races-Dwarves:</b> Dwarf faction inspired on D&D (apparel, furniture, weapons, etc.). [private]</p>
 <p>*<b>Rimworld Races-Elves:</b> Elves and Dark Elves factions inspired on D&D (apparel, furniture, weapons, etc.). [private]</p>
-<p>*<b>Rimworld Races-Humanoids:</b> Minotaur, Lizardmen, Goblin and Orc factions inspired on D&D (apparel, furniture, weapons, etc.). [private]</p>
+<p>*<b>Rimworld Races-Humanoids:</b> Minotaur, Lizardmen, Goblin, Orc and Halfling factions inspired on D&D (apparel, furniture, weapons, etc.). [private]</p>
 <p>*<b>Aquiles Monstrous Compendium:</b> Bestiarium of fantasy monsters. [public]</p>
 My heartful gratitude to all Rimworld modders out there, that through the years served me as inspiration and example to fuel countless hours of time spent in this passion.
 <h3>Special thanks</h3>
