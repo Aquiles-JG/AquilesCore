@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <JobDef>
+    <defName>Aq_AwakenGolem</defName>
+    <driverClass>AquilesCore.JobDriver_AwakenGolem</driverClass>
+    <reportString>awakening golem.</reportString>
+    <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
+  </JobDef>
+</Defs>

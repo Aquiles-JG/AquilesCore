@@ -9,4 +9,9 @@
 	<AC_FuelPower>Fuel power: {0}</AC_FuelPower>
 	<Aq_NeedsOceanWater>Needs to be placed on ocean water.</Aq_NeedsOceanWater>
 	<Aq_CannotPlaceCloseToOther>Cannot place close to near {0}.</Aq_CannotPlaceCloseToOther>
+	<GolemAwoken_Notification>A {0} has been magically compelled to life! It has been named {1} and will now serve the colony.</GolemAwoken_Notification>
+	<GolemIconDesc>Invoke the telluric power from a tome of golems. Doing so will permanently awaken the statue into a {0} to serve the colony.</GolemIconDesc>
+	<GolemIconLabel>Awake</GolemIconLabel>
+	<LetterLabelGolemAwoken>Golem Awoken</LetterLabelGolemAwoken>
+	<NoEligiblePawns>No colonists meet the required intellectual skill level</NoEligiblePawns>
 </LanguageData>

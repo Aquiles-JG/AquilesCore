@@ -1,4 +1,5 @@
 using RimWorld;
+using Verse;
 
 namespace AquilesCore
 {
@@ -6,5 +7,6 @@ namespace AquilesCore
     public static class DefsOf
     {
         public static StatDef Aq_FuelPower;
+        public static JobDef Aq_AwakenGolem;
     }
 }
