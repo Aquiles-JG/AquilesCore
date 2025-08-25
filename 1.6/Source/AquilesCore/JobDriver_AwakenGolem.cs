@@ -31,14 +31,23 @@ namespace AquilesCore
         public override IEnumerable<Toil> MakeNewToils()
         {
             yield return Toils_Goto.GotoThing(StatueInd, PathEndMode.Touch);
-            Toil waitToil = new Toil();
-            waitToil.initAction = delegate
+            Toil spawnGolemToil = new Toil();
+            spawnGolemToil.initAction = delegate
             {
-                Pawn actor = waitToil.actor;
+                Pawn actor = spawnGolemToil.actor;
                 Building statue = (Building)job.targetA.Thing;
+                var comp = statue.GetComp<CompAwakeableGolem>();
+                var golem = PawnGenerator.GeneratePawn(new PawnGenerationRequest(comp.Props.PawnKindDef, Faction.OfPlayer));
+                var spawnedGolem = (Pawn)GenSpawn.Spawn(golem, statue.Position, statue.Map);
+                if (spawnedGolem.relations != null && actor.relations != null)
+                {
+                    actor.relations.AddDirectRelation(PawnRelationDefOf.Bond, spawnedGolem);
+                }
+                TrainFully(actor, spawnedGolem);
+                var letterText = "GolemAwoken_Notification".Translate(spawnedGolem.KindLabel, spawnedGolem.LabelShort);
+                Find.LetterStack.ReceiveLetter("LetterLabelGolemAwoken".Translate(), letterText, LetterDefOf.PositiveEvent, spawnedGolem);
                 SoundDefOf.Roof_Collapse.PlayOneShot(new TargetInfo(statue.Position, statue.Map));
-                var tmpMesh = LightningBoltMeshPool.RandomBoltMesh;
-                WeatherEvent_LightningStrike.DoStrike(statue.Position, statue.Map, ref tmpMesh);
+                statue.Map.weatherManager.eventHandler.AddEvent(new WeatherEvent_LightningStrike(statue.Map, statue.Position));
                 for (int i = 0; i < 20; i++)
                 {
                     var randomCell = statue.Position + GenRadial.RadialPattern[i];
@@ -47,28 +56,7 @@ namespace AquilesCore
                         FilthMaker.TryMakeFilth(randomCell, statue.Map, ThingDefOf.Filth_RubbleRock);
                     }
                 }
-            };
-            waitToil.defaultDuration = 120;
-            yield return waitToil;
-            Toil spawnGolemToil = new Toil();
-            spawnGolemToil.initAction = delegate
-            {
-                Pawn actor = spawnGolemToil.actor;
-                Building statue = (Building)job.targetA.Thing;
-                var comp = statue.GetComp<CompAwakeableGolem>();
-                if (comp != null)
-                {
-                    var golem = PawnGenerator.GeneratePawn(new PawnGenerationRequest(comp.Props.PawnKindDef, Faction.OfPlayer));
-                    var spawnedGolem = (Pawn)GenSpawn.Spawn(golem, statue.Position, statue.Map);
-                    if (spawnedGolem.relations != null && actor.relations != null)
-                    {
-                        actor.relations.AddDirectRelation(PawnRelationDefOf.Bond, spawnedGolem);
-                    }
-                    TrainFully(actor, spawnedGolem);
-                    statue.Destroy();
-                    var letterText = "GolemAwoken_Notification".Translate(spawnedGolem.KindLabel, spawnedGolem.LabelShort);
-                    Find.LetterStack.ReceiveLetter("LetterLabelGolemAwoken".Translate(), letterText, LetterDefOf.PositiveEvent, spawnedGolem);
-                }
+                statue.Destroy();
             };
             yield return spawnGolemToil;
         }

@@ -23,7 +23,7 @@ namespace AquilesCore
             {
                 Command_Action command = new Command_Action();
                 command.defaultLabel = Props.IconLabel.Translate();
-                command.defaultDesc = Props.IconDesc.Translate(parent.def.label);
+                command.defaultDesc = Props.IconDesc.Translate(Props.PawnKindDef.label);
                 command.icon = ContentFinder<Texture2D>.Get(Props.IconPath);
                 command.action = delegate
                 {
@@ -32,12 +32,11 @@ namespace AquilesCore
                     {
                         if (pawn.skills.GetSkill(SkillDefOf.Intellectual).Level >= Props.minIntellectualSkill)
                         {
-                            Pawn pawnForClosure = pawn;
-                            options.Add(new FloatMenuOption(pawnForClosure.LabelCap, delegate
+                            options.Add(new FloatMenuOption(pawn.LabelCap, delegate
                             {
                                 Job job = JobMaker.MakeJob(DefsOf.Aq_AwakenGolem, parent);
                                 job.count = 1;
-                                pawnForClosure.jobs.TryTakeOrderedJob(job, JobTag.Misc);
+                                pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                             }));
                         }
                     }
