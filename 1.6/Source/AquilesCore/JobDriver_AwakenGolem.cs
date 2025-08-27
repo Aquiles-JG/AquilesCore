@@ -47,7 +47,6 @@ namespace AquilesCore
                 var letterText = "GolemAwoken_Notification".Translate(spawnedGolem.KindLabel, spawnedGolem.LabelShort);
                 Find.LetterStack.ReceiveLetter("LetterLabelGolemAwoken".Translate(), letterText, LetterDefOf.PositiveEvent, spawnedGolem);
                 SoundDefOf.Roof_Collapse.PlayOneShot(new TargetInfo(statue.Position, statue.Map));
-                statue.Map.weatherManager.eventHandler.AddEvent(new WeatherEvent_LightningStrike(statue.Map, statue.Position));
                 for (int i = 0; i < 20; i++)
                 {
                     var randomCell = statue.Position + GenRadial.RadialPattern[i];
