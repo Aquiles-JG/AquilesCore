@@ -12,6 +12,7 @@ public class ITab_FuelFilter : ITab
 
     private Gizmo interactedGiz;
     private Event interactedEvent;
+    private bool searchRadiusSliderOnHover;
     public ITab_FuelFilter()
     {
         this.labelKey = "AC_TabFuelFilter";
@@ -87,6 +88,7 @@ public class ITab_FuelFilter : ITab
                 fuelData.searchRadius = newSliderValue;
             }
         }
+        searchRadiusSliderOnHover = Mouse.IsOver(searchRadiusRect);
         curYSliders += elementHeight + elementMargin;
 
         var gizmo = new Gizmo_SetFuelLevel(compRefuelable);
@@ -110,6 +112,20 @@ public class ITab_FuelFilter : ITab
         {
             interactedGiz.ProcessInput(interactedEvent);
             Event.current.Use();
+        }
+    }
+
+    public override void TabUpdate()
+    {
+        if (searchRadiusSliderOnHover)
+        {
+            var compRefuelable = this.SelThing.TryGetComp<CompRefuelable>();
+            var fuelData = RefuelTrackingHelper.GetFuelData(compRefuelable);
+            if (fuelData.searchRadius < GenRadial.MaxRadialPatternRadius)
+            {
+                GenDraw.DrawRadiusRing(this.SelThing.Position, fuelData.searchRadius);
+            }
+            searchRadiusSliderOnHover = false;
         }
     }
 
