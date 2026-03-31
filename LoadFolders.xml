@@ -4,6 +4,9 @@
   <v1.6>
     <li>1.6</li>
     <li>Common</li>
+    <!-- DLCs -->
     <li IfModActive="Ludeon.RimWorld.Ideology">1.6/DLC/Ideology</li>
+    <!--Mods-->
+    <li IfModActive="Aquiles.alchemy">1.6/Mods/AquilesAlchemy</li>
   </v1.6>
 </loadFolders>
