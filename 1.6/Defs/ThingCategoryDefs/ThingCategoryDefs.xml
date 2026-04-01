@@ -10,6 +10,13 @@
   </ThingCategoryDef>
   
   <ThingCategoryDef>
+    <defName>Aq_ArtilleryShells</defName>
+    <label>artillery ammo</label>
+    <parent>Manufactured</parent>
+    <iconPath>Things/Item/Manufactured/Aq_BallistaBolt_b</iconPath>
+  </ThingCategoryDef>
+  
+  <ThingCategoryDef>
     <defName>Aq_Oils</defName>
     <label>herbal oils</label>
     <parent>Manufactured</parent>
