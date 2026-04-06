@@ -74,7 +74,6 @@
 	<useHitPoints>true</useHitPoints>
     <tickerType>Rare</tickerType>
     <size>(1,1)</size>
-    <uiIconScale>0.85</uiIconScale>
     <uiOrder>2790</uiOrder>
 	<designationCategory>Production</designationCategory>
 	<passability>PassThroughOnly</passability>
