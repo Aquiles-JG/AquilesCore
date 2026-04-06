@@ -1,5 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+ <!-- Drying Rack Base-->
+ <ThingDef Abstract="True" Name="DryingRackBase" ParentName="BuildingBase">
+    <graphicData>
+      <texPath>Things/Building/Processor/DryingRack/DryingRack</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(2.75,2.75)</drawSize>
+      <damageData>
+		<rect>(0.05,0.1,0.9,0.9)</rect>
+	  </damageData>
+    </graphicData>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <tickerType>Rare</tickerType>
+    <size>(2,1)</size>
+    <designationCategory>Production</designationCategory>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <pathCost>70</pathCost>
+    <minifiedDef>MinifiedThing</minifiedDef>
+</ThingDef>
+
 <!-- Fermenter Barrel Base -->
 <ThingDef Abstract="True" Name="BasicFermenterBase" ParentName="BuildingBase">
 	<graphicData>
@@ -16,13 +39,11 @@
     <thingCategories>
 		<li>BuildingsProduction</li>
 	</thingCategories>
-    <altitudeLayer>Building</altitudeLayer>
 	<rotatable>true</rotatable>
 	<neverMultiSelect>true</neverMultiSelect>
 	<useHitPoints>true</useHitPoints>
     <tickerType>Rare</tickerType>
     <size>(1,1)</size>
-    <uiIconScale>1</uiIconScale>
     <uiOrder>2001</uiOrder>
 	<designationCategory>Production</designationCategory>
 	<passability>PassThroughOnly</passability>
@@ -48,7 +69,6 @@
     <thingCategories>
 		<li>BuildingsProduction</li>
 	</thingCategories>
-    <altitudeLayer>Building</altitudeLayer>
 	<rotatable>true</rotatable>
 	<neverMultiSelect>true</neverMultiSelect>
 	<useHitPoints>true</useHitPoints>
