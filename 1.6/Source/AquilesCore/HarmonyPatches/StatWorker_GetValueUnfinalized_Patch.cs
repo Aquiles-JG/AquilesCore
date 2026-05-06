@@ -20,7 +20,7 @@ public static class StatWorker_GetValueUnfinalized_Patch
 
 	public static void Postfix(ref float __result, StatWorker __instance, StatRequest req)
 	{
-		if (req.Thing is Pawn pawn && pawn.RaceProps.Humanlike)
+		if (Startup.JobBonusStats.Contains(__instance.stat) && req.Thing is Pawn pawn && pawn.RaceProps.Humanlike)
 		{
 			var (offset, factor) = GetOrCalculateStatBonuses(pawn, __instance.stat);
 			__result += offset;

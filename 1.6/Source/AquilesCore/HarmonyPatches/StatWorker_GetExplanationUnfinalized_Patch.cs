@@ -11,7 +11,7 @@ public static class StatWorker_GetExplanationUnfinalized_Patch
 {
 	public static void Postfix(ref string __result, StatWorker __instance, StatRequest req, ToStringNumberSense numberSense)
 	{
-		if (req.Thing is not Pawn pawn)
+		if (req.Thing is not Pawn pawn || Startup.JobBonusStats.Contains(__instance.stat) is false)
 			return;
 
 		var relevantFacilities = StatWorker_GetValueUnfinalized_Patch.GetFacilitiesForPawn(pawn)
