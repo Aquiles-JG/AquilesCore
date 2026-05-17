@@ -14,4 +14,6 @@
 	<GolemIconLabel>Awake</GolemIconLabel>
 	<LetterLabelGolemAwoken>Golem Awoken</LetterLabelGolemAwoken>
 	<NoEligiblePawns>No colonists meet the required intellectual skill level</NoEligiblePawns>
+	<Aq_EjectIngredients>Eject ingredients</Aq_EjectIngredients>
+	<Aq_EjectIngredientsDesc>Eject all stored ingredients onto the ground near the building.</Aq_EjectIngredientsDesc>
 </LanguageData>
