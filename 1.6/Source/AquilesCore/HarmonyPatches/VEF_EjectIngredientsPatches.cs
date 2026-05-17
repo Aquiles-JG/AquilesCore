@@ -155,7 +155,7 @@ namespace AquilesCore
             var ingredientsOwners = prop_IngredientsOwners.GetValue(process) as System.Collections.IEnumerable;
             foreach (var owner in ingredientsOwners)
             {
-                var thingDef = prop_OwnerThingDef.GetValue(owner) as ThingDef;
+                var thingDef = field_OwnerLastThingStored.GetValue(owner) as ThingDef;
                 var count = (int)prop_OwnerCount.GetValue(owner);
                 var stuff = field_OwnerStuffOfLastThingStored.GetValue(owner) as ThingDef;
 
