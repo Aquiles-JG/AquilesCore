@@ -61,54 +61,71 @@ namespace AquilesCore
 
         public void TryHealRandomOldWound()
         {
-            int num = Props.regenHealVal;
-            List<Hediff> list = new List<Hediff>();
-            List<Hediff> list2 = base.Pawn?.health?.hediffSet.hediffs;
-            List<Hediff> list3 = list2;
-            if (list3 != null && list3.Count > 0)
+            if (Pawn?.health?.hediffSet == null)
             {
-                foreach (Hediff item in list3)
+                return;
+            }
+
+            int num = Props.regenHealVal;
+            var list = new List<Hediff>();
+
+            if (Props.cureScars)
+            {
+                var hediffs = Pawn.health.hediffSet.hediffs;
+                if (hediffs != null)
                 {
-                    if (item.IsPermanent() && Props.cureScars)
+                    for (int i = 0; i < hediffs.Count; i++)
                     {
-                        if (item.Part != base.Pawn.health.hediffSet.GetBrain() || Props.includeBrainScar)
+                        Hediff hediff = hediffs[i];
+                        if (hediff.IsPermanent())
                         {
-                            list.Add(item);
+                            if (hediff.Part != Pawn.health.hediffSet.GetBrain() || Props.includeBrainScar)
+                            {
+                                list.Add(hediff);
+                            }
                         }
-                    }
-                    else if (item is Hediff_MissingPart && Props.restoreMissingLimbs)
-                    {
-                        list.Add(item);
                     }
                 }
             }
-            Log.Message("TryHealRandomOldWound: " + list.Select(x => x).ToStringSafeEnumerable());
+
+            if (Props.restoreMissingLimbs)
+            {
+                var missingParts = Pawn.health.hediffSet.GetMissingPartsCommonAncestors();
+                if (missingParts != null)
+                {
+                    foreach (var mp in missingParts)
+                    {
+                        list.Add(mp);
+                    }
+                }
+            }
+
             if (list.Count <= 0)
             {
                 return;
             }
-            list.TryRandomElement(out var result);
-            if (result == null)
+
+            if (!list.TryRandomElement(out var result) || result == null)
             {
                 return;
             }
+
             if (result is Hediff_MissingPart missingPart)
             {
-                Log.Message("Should remove: " + missingPart);
                 var part = missingPart.Part;
-                base.Pawn.health.RemoveHediff(missingPart);
-                base.Pawn.health.RestorePart(part);
-                if (PawnUtility.ShouldSendNotificationAbout(base.Pawn))
+                Pawn.health.RestorePart(part);
+                if (PawnUtility.ShouldSendNotificationAbout(Pawn))
                 {
-                    Messages.Message("Regen.RecoveredLimb".Translate(base.Pawn.Named("PAWN")), MessageTypeDefOf.PositiveEvent);
+                    Messages.Message("Regen.RecoveredLimb".Translate(Pawn.Named("PAWN")), MessageTypeDefOf.PositiveEvent);
                 }
             }
             else
             {
+
                 if (result.IsTended())
                 {
                     num = (int)((float)num * 1.2f);
-                    float healFactor = GetHealFactor(result);
+                    var healFactor = GetHealFactor(result);
                     if (healFactor > 0f)
                     {
                         num = (int)((float)num * healFactor);
@@ -126,9 +143,9 @@ namespace AquilesCore
                 {
                     result.Severity = 0f;
                 }
-                if (result.Severity <= 0f && PawnUtility.ShouldSendNotificationAbout(base.Pawn))
+                if (result.Severity <= 0f && PawnUtility.ShouldSendNotificationAbout(Pawn))
                 {
-                    Messages.Message("Regen.HealedScar".Translate(base.Pawn.Named("PAWN")), MessageTypeDefOf.PositiveEvent);
+                    Messages.Message("Regen.HealedScar".Translate(Pawn.Named("PAWN")), MessageTypeDefOf.PositiveEvent);
                 }
             }
         }
