@@ -1,27 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
+  <ThingCategoryDef>
+    <defName>Aq_KibbleCategory</defName>
+    <label>animal food</label>
+    <parent>Foods</parent>
+    <iconPath>Things/Item/Resource/Kibble</iconPath>
+  </ThingCategoryDef>
+  
   <ThingCategoryDef>
     <defName>Aq_Fruit</defName>
     <label>fruits</label>
     <parent>PlantFoodRaw</parent>
     <resourceReadoutRoot>false</resourceReadoutRoot>
     <iconPath>Things/Item/Resource/PlantFoodRaw/Berries</iconPath>
-  </ThingCategoryDef>
-  
-  <ThingCategoryDef>
-    <defName>Aq_ArtilleryShells</defName>
-    <label>artillery ammo</label>
-    <parent>Manufactured</parent>
-    <iconPath>Things/Item/Resource/Shell/Shell_EMP/Shell_EMP_b</iconPath>
-  </ThingCategoryDef>
-  
-  <ThingCategoryDef>
-    <defName>Aq_Oils</defName>
-    <label>herbal oils</label>
-    <parent>Manufactured</parent>
-    <resourceReadoutRoot>false</resourceReadoutRoot>
-    <iconPath>Things/Item/Manufactured/HenbaneOil</iconPath>
   </ThingCategoryDef>
   
   <ThingCategoryDef>

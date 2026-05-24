@@ -1,16 +1,30 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Patch>
-	
-    <Operation Class="PatchOperationSequence">
-        <success>Always</success>
-        <operations>
-            <li Class="PatchOperationReplace">
-                <xpath>/Defs/ThingCategoryDef[defName="MortarShells"]/parent</xpath>
-                <value>
-                      <parent>Aq_ArtilleryShells</parent>
-                </value>
-            </li>
-        </operations>
-    </Operation>
-	
+  <!-- Animal Food Category-->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Hay"]/thingCategories/li/text()</xpath>
+    <value>
+      <thingCategories>Aq_KibbleCategory</thingCategories>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[ingestible[foodType[contains(text(), "Kibble")]]][not(thingCategories)]</xpath>
+    <value>
+      <thingCategories />
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAttributeAdd">
+    <success>Always</success>
+    <xpath>/Defs/ThingDef[ingestible[foodType[contains(text(), "Kibble")]]]/thingCategories</xpath>
+    <attribute>Inherit</attribute>
+    <value>false</value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <success>Always</success>
+    <xpath>Defs/ThingDef[ingestible[foodType[contains(text(), "Kibble")]]]/thingCategories/li/text()</xpath>
+    <value>
+      <thingCategories>Aq_KibbleCategory</thingCategories>
+    </value>
+  </Operation>
 </Patch>
