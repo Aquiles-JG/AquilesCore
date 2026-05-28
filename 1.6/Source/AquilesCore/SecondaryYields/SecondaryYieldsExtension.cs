@@ -1,12 +1,11 @@
 using System.Collections.Generic;
 using Verse;
 
-namespace SecondaryYields
+namespace AquilesCore
 {
-	public class MineableExtension : DefModExtension
+	public class SecondaryYieldsExtension : DefModExtension
 	{
 		public float chanceToSpawnSecondaryOutput;
-
 		public List<YieldOutput> yieldOutputThings;
 	}
 }
