@@ -1,3 +1,4 @@
+using System.Text;
 using HarmonyLib;
 using RimWorld;
 using System;
@@ -16,7 +17,7 @@ namespace AquilesCore
         private const string VEF_PackageId = "OskarPotocki.VanillaFactionsExpanded.Core";
         private const string VEF_CompAdvancedResourceProcessor_TypeName = "PipeSystem.CompAdvancedResourceProcessor";
         private static Texture2D ejectIcon;
-
+        public static Type processorType;
         private static PropertyInfo prop_Process;
         private static PropertyInfo prop_Progress;
         private static PropertyInfo prop_IngredientsOwners;
@@ -26,7 +27,7 @@ namespace AquilesCore
         private static FieldInfo field_OwnerLastThingStored;
         private static FieldInfo field_OwnerStuffOfLastThingStored;
         private static MethodInfo method_OwnerReset;
-
+        private static MethodBase cachedInspectMethod;
         private static MethodBase cachedTargetMethod;
         private static bool vefLoaded;
 
@@ -44,7 +45,7 @@ namespace AquilesCore
         {
             if (!vefLoaded) return false;
 
-            var processorType = AccessTools.TypeByName(VEF_CompAdvancedResourceProcessor_TypeName);
+            processorType = AccessTools.TypeByName(VEF_CompAdvancedResourceProcessor_TypeName);
             if (processorType == null)
             {
                 Log.Error($"[AquilesCore] Could not find type {VEF_CompAdvancedResourceProcessor_TypeName}. Disabling VEF Eject Ingredients patch.");
@@ -168,6 +169,48 @@ namespace AquilesCore
                 }
 
                 method_OwnerReset.Invoke(owner, null);
+            }
+        }
+
+        [HarmonyPatch]
+        [HotSwappable]
+        private static class InspectStringPatch
+        {
+            [HarmonyPrepare]
+            public static bool Prepare()
+            {
+                if (!vefLoaded) return false;
+
+                cachedInspectMethod = AccessTools.Method(processorType, "CompInspectStringExtra");
+                if (cachedInspectMethod == null)
+                {
+                    return Fail($"CompInspectStringExtra on {VEF_CompAdvancedResourceProcessor_TypeName}");
+                }
+                return true;
+            }
+
+            [HarmonyTargetMethod]
+            public static MethodBase TargetMethod() => cachedInspectMethod;
+            public static void Postfix(object __instance, ref string __result)
+            {
+                var process = prop_Process.GetValue(__instance);
+                if (process == null) return;
+                var owners = prop_IngredientsOwners.GetValue(process) as System.Collections.IEnumerable;
+                if (owners == null) return;
+                var ingredients = new List<string>();
+                foreach (var owner in owners)
+                {
+                    int count = (int)prop_OwnerCount.GetValue(owner);
+                    if (count <= 0) continue;
+
+                    ThingDef thingDef = field_OwnerLastThingStored.GetValue(owner) as ThingDef ?? prop_OwnerThingDef.GetValue(owner) as ThingDef;
+                    if (thingDef == null) continue;
+                    ingredients.Add($"{count}x {thingDef.label}");
+                }
+                if (ingredients.Any())
+                {
+                    __result = __result.ReplaceFirst("%", $"% ({ingredients.ToStringSafeEnumerable()})");
+                }
             }
         }
     }
