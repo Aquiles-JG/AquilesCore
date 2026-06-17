@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- These changes are modest, but impactful, so it would be necessary a toggle in Aquiles Core mod settings called "Body type matters" (default: on)-->
+  <StatDef>
+    <defName>Aq_BodySizeFactor</defName>
+    <label>body size factor</label>
+    <description>A multiplier on the pawn's body size.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0</minValue>
+    <displayPriorityInCategory>3553</displayPriorityInCategory>
+    <scenarioRandomizable>false</scenarioRandomizable>
+  </StatDef>
+  <!-- Permanent Hediffs: Hulk, Fat and Thin-->
+  <!-- IMPORTANT: if at some point the pawn changes his body, the hediff must change too-->
+  <!-- NOTE: These values should be accumulative with others that might come from other sources, like genes, etc.-->
+  <HediffDef>
+    <defName>Aq_HulkModifierStat</defName>
+    <label>hulk</label>
+    <description>A pawn with the hulk body type.</description>
+    <descriptionShort>A hulk pawn.</descriptionShort>
+    <hediffClass>HediffWithComps</hediffClass>
+    <makesSickThought>false</makesSickThought>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+    <priceOffset>250</priceOffset>
+    <stages>
+      <li>
+        <label></label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.01</minSeverity>   <!-- Not sure of this value. Please check-->
+        <hungerRateFactor>1.2</hungerRateFactor>
+        <statFactors>
+          <Aq_BodySizeFactor>1.1</Aq_BodySizeFactor>
+          <MeleeDamageFactor>1.2</MeleeDamageFactor>
+          <MeleeDodgeChance>0.9</MeleeDodgeChance>
+          <StaggerDurationFactor>0.85</StaggerDurationFactor>
+          <MoveSpeed>0.95</MoveSpeed>
+          <ArrestSuccessChance>1.2</ArrestSuccessChance>
+          <WorkSpeedGlobal>0.95</WorkSpeedGlobal>
+          <RestFallRateFactor>1.05</RestFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <ComfyTemperatureMax>-2</ComfyTemperatureMax>
+          <ComfyTemperatureMin>2</ComfyTemperatureMin>
+          <CarryingCapacity>15</CarryingCapacity>
+          <PainShockThreshold>0.04</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>Aq_FatModifierStat</defName>
+    <label>fat</label>
+    <description>A pawn with the fat body type.</description>
+    <descriptionShort>A fat pawn.</descriptionShort>
+    <hediffClass>HediffWithComps</hediffClass>
+    <makesSickThought>false</makesSickThought>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+    <priceOffset>-250</priceOffset>
+    <stages>
+      <li>
+        <label></label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.01</minSeverity>   <!-- Not sure of this value. Please check-->
+        <hungerRateFactor>1.2</hungerRateFactor>
+        <statFactors>
+          <Aq_BodySizeFactor>1.2</Aq_BodySizeFactor>
+          <MeleeDamageFactor>1.1</MeleeDamageFactor>
+          <MeleeDodgeChance>0.8</MeleeDodgeChance>
+          <StaggerDurationFactor>0.9</StaggerDurationFactor>
+          <MoveSpeed>0.85</MoveSpeed>
+          <ArrestSuccessChance>1.1</ArrestSuccessChance>
+          <WorkSpeedGlobal>0.9</WorkSpeedGlobal>
+          <RestFallRateFactor>1.1</RestFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <ComfyTemperatureMax>-3</ComfyTemperatureMax>
+          <ComfyTemperatureMin>-3</ComfyTemperatureMin>
+          <CarryingCapacity>10</CarryingCapacity>
+          <PainShockThreshold>0.02</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+  <HediffDef>
+    <defName>Aq_ThinModifierStat</defName>
+    <label>thin</label>
+    <description>A pawn with the thin body type.</description>
+    <descriptionShort>A thin pawn.</descriptionShort>
+    <hediffClass>HediffWithComps</hediffClass>
+    <makesSickThought>false</makesSickThought>
+    <isBad>false</isBad>
+    <tendable>false</tendable>
+    <scenarioCanAdd>false</scenarioCanAdd>
+    <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
+    <stages>
+      <li>
+        <label></label>
+        <becomeVisible>false</becomeVisible>
+        <minSeverity>0.01</minSeverity>   <!-- Not sure of this value. Please check-->
+        <hungerRateFactor>0.9</hungerRateFactor>
+        <statFactors>
+          <Aq_BodySizeFactor>0.9</Aq_BodySizeFactor>
+          <MeleeDamageFactor>0.9</MeleeDamageFactor>
+          <MeleeDodgeChance>1.1</MeleeDodgeChance>
+          <StaggerDurationFactor>1.1</StaggerDurationFactor>
+          <MoveSpeed>1.1</MoveSpeed>
+          <ArrestSuccessChance>0.85</ArrestSuccessChance>
+          <WorkSpeedGlobal>1.05</WorkSpeedGlobal>
+          <RestFallRateFactor>0.95</RestFallRateFactor>
+        </statFactors>
+        <statOffsets>
+          <ComfyTemperatureMax>3</ComfyTemperatureMax>
+          <ComfyTemperatureMin>3</ComfyTemperatureMin>
+          <CarryingCapacity>-10</CarryingCapacity>
+          <PainShockThreshold>-0.02</PainShockThreshold>
+        </statOffsets>
+      </li>
+    </stages>
+  </HediffDef>
+</Defs>

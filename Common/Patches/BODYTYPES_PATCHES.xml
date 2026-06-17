@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffGiverSetDef[defName="OrganicStandard"]/hediffGivers</xpath>
+    <value>
+      <li Class="AquilesCore.HediffGiver_Hulk">
+        <!-- SUGGESTION: a variant of HediffGiver_Birthday, but only one-time with a 100% chance at age 13 (Rimworld's adulthood) or older-->
+        <hediff>Aq_HulkModifierStat</hediff>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffGiverSetDef[defName="OrganicStandard"]/hediffGivers</xpath>
+    <value>
+      <li Class="AquilesCore.HediffGiver_Fat">
+        <hediff>Aq_FatModifierStat</hediff>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffGiverSetDef[defName="OrganicStandard"]/hediffGivers</xpath>
+    <value>
+      <li Class="AquilesCore.HediffGiver_Thin">
+        <hediff>Aq_ThinModifierStat</hediff>
+      </li>
+    </value>
+  </Operation>
+  <!-- Ideology DLC-->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ideology</li>
+    </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/HediffDef[defName="Aq_HulkModifierStat"]/stages/li/statFactors</xpath>
+          <value>
+            <SuppressionPower>1.15</SuppressionPower>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>/Defs/HediffDef[defName="Aq_ThinModifierStat"]/stages/li/statFactors</xpath>
+          <value>
+            <SuppressionPower>0.85</SuppressionPower>
+          </value>
+        </li>
+      </operations>
+    </match>
+  </Operation>
+</Patch>
