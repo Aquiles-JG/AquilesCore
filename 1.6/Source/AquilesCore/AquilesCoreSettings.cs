@@ -24,6 +24,7 @@ namespace AquilesCore
             listing.CheckboxLabeled("AC_BodyTypeMattersToggle".Translate(), ref bodyTypeMatters, "AC_BodyTypeMattersToggleDesc".Translate());
             if (bodyTypeMatters)
             {
+                listing.Gap();
                 listing.Label("AC_XenotypeBlacklistHeader".Translate());
                 var xenotypes = DefDatabase<XenotypeDef>.AllDefs.OrderBy(x => x.label).ToList();
                 for (int i = 0; i < xenotypes.Count; i++)

@@ -19,7 +19,6 @@ namespace AquilesCore
                 && !IsBlacklisted(pawn);
 
             var has = pawn.health.hediffSet.HasHediff(hediff);
-
             if (shouldHave && !has)
             {
                 TryApply(pawn);
