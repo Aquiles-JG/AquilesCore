@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffGiverSetDef[defName="OrganicStandard"]/hediffGivers</xpath>
+    <value>
+      <li Class="AquilesCore.HediffGiver_BodyType">
+        <hediff>Aq_HulkModifierStat</hediff>
+        <bodyType>Hulk</bodyType>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffGiverSetDef[defName="OrganicStandard"]/hediffGivers</xpath>
+    <value>
+      <li Class="AquilesCore.HediffGiver_BodyType">
+        <hediff>Aq_FatModifierStat</hediff>
+        <bodyType>Fat</bodyType>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/HediffGiverSetDef[defName="OrganicStandard"]/hediffGivers</xpath>
+    <value>
+      <li Class="AquilesCore.HediffGiver_BodyType">
+        <hediff>Aq_ThinModifierStat</hediff>
+        <bodyType>Thin</bodyType>
+      </li>
+    </value>
+  </Operation>
+</Patch>

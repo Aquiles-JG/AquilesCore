@@ -1,22 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <!-- These changes are modest, but impactful, so it would be necessary a toggle in Aquiles Core mod settings called "Body type matters" (default: on)-->
-  <StatDef>
-    <defName>Aq_BodySizeFactor</defName>
-    <label>body size factor</label>
-    <description>A multiplier on the pawn's body size.</description>
-    <category>BasicsPawn</category>
-    <defaultBaseValue>1.0</defaultBaseValue>
-    <toStringStyle>PercentZero</toStringStyle>
-    <showOnAnimals>false</showOnAnimals>
-    <hideAtValue>1</hideAtValue>
-    <minValue>0</minValue>
-    <displayPriorityInCategory>3553</displayPriorityInCategory>
-    <scenarioRandomizable>false</scenarioRandomizable>
-  </StatDef>
-  <!-- Permanent Hediffs: Hulk, Fat and Thin-->
-  <!-- IMPORTANT: if at some point the pawn changes his body, the hediff must change too-->
-  <!-- NOTE: These values should be accumulative with others that might come from other sources, like genes, etc.-->
   <HediffDef>
     <defName>Aq_HulkModifierStat</defName>
     <label>hulk</label>
@@ -33,7 +16,7 @@
       <li>
         <label></label>
         <becomeVisible>false</becomeVisible>
-        <minSeverity>0.01</minSeverity>   <!-- Not sure of this value. Please check-->
+        <minSeverity>0.01</minSeverity>
         <hungerRateFactor>1.2</hungerRateFactor>
         <statFactors>
           <Aq_BodySizeFactor>1.1</Aq_BodySizeFactor>
@@ -54,6 +37,7 @@
       </li>
     </stages>
   </HediffDef>
+  
   <HediffDef>
     <defName>Aq_FatModifierStat</defName>
     <label>fat</label>
@@ -70,7 +54,7 @@
       <li>
         <label></label>
         <becomeVisible>false</becomeVisible>
-        <minSeverity>0.01</minSeverity>   <!-- Not sure of this value. Please check-->
+        <minSeverity>0.01</minSeverity>
         <hungerRateFactor>1.2</hungerRateFactor>
         <statFactors>
           <Aq_BodySizeFactor>1.2</Aq_BodySizeFactor>
@@ -91,6 +75,7 @@
       </li>
     </stages>
   </HediffDef>
+  
   <HediffDef>
     <defName>Aq_ThinModifierStat</defName>
     <label>thin</label>
@@ -106,7 +91,7 @@
       <li>
         <label></label>
         <becomeVisible>false</becomeVisible>
-        <minSeverity>0.01</minSeverity>   <!-- Not sure of this value. Please check-->
+        <minSeverity>0.01</minSeverity>
         <hungerRateFactor>0.9</hungerRateFactor>
         <statFactors>
           <Aq_BodySizeFactor>0.9</Aq_BodySizeFactor>

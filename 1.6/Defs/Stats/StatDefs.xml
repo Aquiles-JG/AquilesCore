@@ -1,6 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-
+  <StatDef>
+    <defName>Aq_BodySizeFactor</defName>
+    <label>body size factor</label>
+    <description>A multiplier on the pawn's body size.</description>
+    <category>BasicsPawn</category>
+    <defaultBaseValue>1.0</defaultBaseValue>
+    <toStringStyle>PercentZero</toStringStyle>
+    <showOnAnimals>false</showOnAnimals>
+    <hideAtValue>1</hideAtValue>
+    <minValue>0</minValue>
+    <displayPriorityInCategory>3553</displayPriorityInCategory>
+    <scenarioRandomizable>false</scenarioRandomizable>
+  </StatDef>
+  
   <StatDef>
     <defName>Aq_FuelPower</defName>
     <label>fuel power</label>
@@ -12,5 +25,4 @@
     <toStringStyle>PercentZero</toStringStyle>
     <displayPriorityInCategory>4010</displayPriorityInCategory>
   </StatDef>
-  
 </Defs>
