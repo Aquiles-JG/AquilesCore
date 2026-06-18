@@ -8,7 +8,7 @@ public static class Pawn_RelationsTracker_PrettinessFactor_Patch
 {
     public static void Postfix(Pawn_RelationsTracker __instance, Pawn otherPawn, ref float __result)
     {
-        if (!__instance.pawn.RaceProps.Humanlike || !otherPawn.RaceProps.Humanlike)
+        if (!AquilesCoreMod.settings.beautyMatters || !__instance.pawn.RaceProps.Humanlike || !otherPawn.RaceProps.Humanlike)
         {
             return;
         }

@@ -3,31 +3,23 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>net48</TargetFramework>
-    <!-- Ensure this matches the original framework version -->
     <RootNamespace>AquilesCore</RootNamespace>
     <AssemblyName>AquilesCore</AssemblyName>
     <LangVersion>latest</LangVersion>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <!-- Prevent appending target framework to the output path -->
   </PropertyGroup>
-  <!-- Debug configuration -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
     <Optimize>true</Optimize>
     <OutputPath>..\..\Assemblies\</OutputPath>
-    <!-- Output directly to Assemblies -->
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <DebugType>none</DebugType>
-    <!-- Set to 'none' to exclude debug info -->
   </PropertyGroup>
-  <!-- Release configuration -->
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Optimize>true</Optimize>
     <OutputPath>..\..\Assemblies\</OutputPath>
-    <!-- Output directly to Assemblies -->
     <DefineConstants>TRACE</DefineConstants>
     <DebugType>none</DebugType>
-    <!-- Set to 'none' to exclude debug info -->
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System"/>
@@ -50,7 +42,6 @@
     </PackageReference>
   </ItemGroup>
   <PropertyGroup>
-    <!-- Disable automatic generation of assembly attributes -->
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>

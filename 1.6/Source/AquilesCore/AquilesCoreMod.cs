@@ -1,14 +1,21 @@
-﻿using HarmonyLib;
+using UnityEngine;
 using Verse;
 
 namespace AquilesCore
 {
-    [StaticConstructorOnStartup]
-    public static class AquilesCoreMod
+    public class AquilesCoreMod : Mod
     {
-        static AquilesCoreMod()
+        public static AquilesCoreSettings settings;
+
+        public AquilesCoreMod(ModContentPack content) : base(content)
         {
-            new Harmony("AquilesCoreMod").PatchAll();
+            settings = GetSettings<AquilesCoreSettings>();
+        }
+
+        public override string SettingsCategory() => Content.Name;
+        public override void DoSettingsWindowContents(Rect inRect)
+        {
+            settings.DoSettingsWindowContents(inRect);
         }
     }
 }

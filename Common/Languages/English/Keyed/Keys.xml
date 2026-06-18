@@ -16,4 +16,9 @@
 	<NoEligiblePawns>No colonists meet the required intellectual skill level</NoEligiblePawns>
 	<Aq_EjectIngredients>Eject ingredients</Aq_EjectIngredients>
 	<Aq_EjectIngredientsDesc>Eject all stored ingredients onto the ground near the building.</Aq_EjectIngredientsDesc>
+	<AC_BeautyMattersToggle>Beauty matters</AC_BeautyMattersToggle>
+	<AC_BeautyMattersToggleDesc>When enabled, pawn beauty affects social stats, relations, and thoughts. Disable to revert to vanilla beauty behaviour.</AC_BeautyMattersToggleDesc>
+	<AC_BodyTypeMattersToggle>Body type matters</AC_BodyTypeMattersToggle>
+	<AC_BodyTypeMattersToggleDesc>When enabled, a pawn's body type (hulk, fat, thin) applies stat modifiers. Disable to revert to vanilla behaviour.</AC_BodyTypeMattersToggleDesc>
+	<AC_XenotypeBlacklistHeader>Excluded xenotypes (these will not receive body type modifiers):</AC_XenotypeBlacklistHeader>
 </LanguageData>

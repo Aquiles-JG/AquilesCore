@@ -1,12 +1,12 @@
 using RimWorld;
 using Verse;
-using UnityEngine;
 namespace AquilesCore;
+
 public class StatPart_BeautyFactor : StatPart
 {
     public override string ExplanationPart(StatRequest req)
     {
-        if (!req.HasThing || !(req.Thing is Pawn pawn) || !pawn.RaceProps.Humanlike)
+        if (!AquilesCoreMod.settings.beautyMatters || !req.HasThing || !(req.Thing is Pawn pawn) || !pawn.RaceProps.Humanlike)
         {
             return null;
         }
@@ -18,7 +18,7 @@ public class StatPart_BeautyFactor : StatPart
 
     public override void TransformValue(StatRequest req, ref float val)
     {
-        if (!req.HasThing || !(req.Thing is Pawn pawn) || !pawn.RaceProps.Humanlike)
+        if (!AquilesCoreMod.settings.beautyMatters || !req.HasThing || !(req.Thing is Pawn pawn) || !pawn.RaceProps.Humanlike)
         {
             return;
         }

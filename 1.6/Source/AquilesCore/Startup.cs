@@ -1,8 +1,8 @@
+using System;
 using System.Collections.Generic;
 using HarmonyLib;
-using Verse;
 using RimWorld;
-using System;
+using Verse;
 
 namespace AquilesCore
 {
@@ -12,6 +12,7 @@ namespace AquilesCore
         public static readonly HashSet<StatDef> JobBonusStats = new HashSet<StatDef>();
         static Startup()
         {
+            new Harmony("AquilesCoreMod").PatchAll();
             foreach (var thingDef in DefDatabase<ThingDef>.AllDefs)
             {
                 var compProps = thingDef.GetCompProperties<CompProperties_Refuelable>();

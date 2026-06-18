@@ -1,6 +1,7 @@
 using HarmonyLib;
 using RimWorld;
 using Verse;
+namespace AquilesCore;
 
 [HarmonyPatch(typeof(ThoughtWorker_Ugly), "CurrentSocialStateInternal")]
 public static class ThoughtWorker_Ugly_CurrentSocialStateInternal_Patch
@@ -8,7 +9,7 @@ public static class ThoughtWorker_Ugly_CurrentSocialStateInternal_Patch
     [HarmonyPriority(int.MinValue)]
     public static void Postfix(Pawn pawn, Pawn other, ref ThoughtState __result)
     {
-        if (__result.Active is false)
+        if (!AquilesCoreMod.settings.beautyMatters || __result.Active is false)
         {
             return;
         }
