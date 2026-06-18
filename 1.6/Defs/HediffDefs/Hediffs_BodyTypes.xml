@@ -20,19 +20,17 @@
         <hungerRateFactor>1.2</hungerRateFactor>
         <statFactors>
           <Aq_BodySizeFactor>1.1</Aq_BodySizeFactor>
+          <ArrestSuccessChance>1.25</ArrestSuccessChance>
           <MeleeDamageFactor>1.2</MeleeDamageFactor>
           <MeleeDodgeChance>0.9</MeleeDodgeChance>
-          <StaggerDurationFactor>0.85</StaggerDurationFactor>
           <MoveSpeed>0.95</MoveSpeed>
-          <ArrestSuccessChance>1.2</ArrestSuccessChance>
-          <WorkSpeedGlobal>0.95</WorkSpeedGlobal>
           <RestFallRateFactor>1.05</RestFallRateFactor>
+          <StaggerDurationFactor>0.85</StaggerDurationFactor>
+          <WorkSpeedGlobal>0.95</WorkSpeedGlobal>
         </statFactors>
         <statOffsets>
           <ComfyTemperatureMax>-2</ComfyTemperatureMax>
           <ComfyTemperatureMin>2</ComfyTemperatureMin>
-          <CarryingCapacity>15</CarryingCapacity>
-          <PainShockThreshold>0.04</PainShockThreshold>
         </statOffsets>
       </li>
     </stages>
@@ -58,19 +56,17 @@
         <hungerRateFactor>1.2</hungerRateFactor>
         <statFactors>
           <Aq_BodySizeFactor>1.2</Aq_BodySizeFactor>
+          <ArrestSuccessChance>1.1</ArrestSuccessChance>
           <MeleeDamageFactor>1.1</MeleeDamageFactor>
           <MeleeDodgeChance>0.8</MeleeDodgeChance>
-          <StaggerDurationFactor>0.9</StaggerDurationFactor>
           <MoveSpeed>0.85</MoveSpeed>
-          <ArrestSuccessChance>1.1</ArrestSuccessChance>
-          <WorkSpeedGlobal>0.9</WorkSpeedGlobal>
-          <RestFallRateFactor>1.1</RestFallRateFactor>
+          <RestFallRateFactor>1.05</RestFallRateFactor>
+          <StaggerDurationFactor>0.9</StaggerDurationFactor>
+          <WorkSpeedGlobal>0.95</WorkSpeedGlobal>
         </statFactors>
         <statOffsets>
           <ComfyTemperatureMax>-3</ComfyTemperatureMax>
           <ComfyTemperatureMin>-3</ComfyTemperatureMin>
-          <CarryingCapacity>10</CarryingCapacity>
-          <PainShockThreshold>0.02</PainShockThreshold>
         </statOffsets>
       </li>
     </stages>
@@ -95,19 +91,17 @@
         <hungerRateFactor>0.9</hungerRateFactor>
         <statFactors>
           <Aq_BodySizeFactor>0.9</Aq_BodySizeFactor>
+          <ArrestSuccessChance>0.85</ArrestSuccessChance>
           <MeleeDamageFactor>0.9</MeleeDamageFactor>
           <MeleeDodgeChance>1.1</MeleeDodgeChance>
-          <StaggerDurationFactor>1.1</StaggerDurationFactor>
-          <MoveSpeed>1.1</MoveSpeed>
-          <ArrestSuccessChance>0.85</ArrestSuccessChance>
-          <WorkSpeedGlobal>1.05</WorkSpeedGlobal>
+          <MoveSpeed>1.05</MoveSpeed>
           <RestFallRateFactor>0.95</RestFallRateFactor>
+          <StaggerDurationFactor>1.15</StaggerDurationFactor>
+          <WorkSpeedGlobal>1.05</WorkSpeedGlobal>
         </statFactors>
         <statOffsets>
           <ComfyTemperatureMax>3</ComfyTemperatureMax>
           <ComfyTemperatureMin>3</ComfyTemperatureMin>
-          <CarryingCapacity>-10</CarryingCapacity>
-          <PainShockThreshold>-0.02</PainShockThreshold>
         </statOffsets>
       </li>
     </stages>
