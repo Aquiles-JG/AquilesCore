@@ -9,13 +9,13 @@ namespace AquilesCore
     {
         public static void Postfix(Pawn __instance, ref float __result)
         {
-            if (!AquilesCoreMod.settings.bodyTypeMatters)
+            if (!AquilesCoreMod.settings.bodyTypeMatters || __instance.RaceProps.Humanlike is false)
             {
                 return;
             }
             try  // errors upon save load, hence the try catch block
             {
-                __result *= __instance.GetStatValue(DefsOf.Aq_BodySizeFactor);
+                __result *= __instance.GetStatValue(DefsOf.Aq_BodySizeFactor, cacheStaleAfterTicks: 150);
             }
             catch
             {
