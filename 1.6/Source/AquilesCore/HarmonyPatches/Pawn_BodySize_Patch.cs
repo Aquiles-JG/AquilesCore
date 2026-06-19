@@ -9,17 +9,25 @@ namespace AquilesCore
     {
         public static void Postfix(Pawn __instance, ref float __result)
         {
-            if (!AquilesCoreMod.settings.bodyTypeMatters || __instance.RaceProps.Humanlike is false)
+            if (!AquilesCoreMod.settings.bodyTypeMatters)
             {
                 return;
             }
-            try  // errors upon save load, hence the try catch block
+            var bodyType = __instance.story?.bodyType;
+            if (bodyType == null)
             {
-                __result *= __instance.GetStatValue(DefsOf.Aq_BodySizeFactor, cacheStaleAfterTicks: 150);
+                return;
             }
-            catch
+            if (bodyType == BodyTypeDefOf.Fat || bodyType == BodyTypeDefOf.Thin || bodyType == BodyTypeDefOf.Hulk)
             {
-                
+                try  // errors upon save load, hence the try catch block
+                {
+                    __result *= __instance.GetStatValue(DefsOf.Aq_BodySizeFactor, cacheStaleAfterTicks: 150);
+                }
+                catch
+                {
+
+                }
             }
         }
     }
