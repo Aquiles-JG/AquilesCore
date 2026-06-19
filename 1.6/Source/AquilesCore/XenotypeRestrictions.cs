@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using System;
 using System.Collections.Generic;
@@ -6,24 +6,22 @@ using System.Linq;
 using System.Reflection.Emit;
 using Verse;
 
-namespace XenotypeRestrictions
+namespace AquilesCore
 {
-    [StaticConstructorOnStartup]
-    public static class Startup
-    {
-        static Startup()
-        {
-            new Harmony("XenotypeRestrictionsMod").PatchAll();
-        }
-    }
-
     public class XenotypeExtension : DefModExtension
     {
         public List<XenotypeDef> exclusiveXenotypes;
         public Dictionary<ThingDef, ThingDef> overridenSpawnedParts;
         public ThingDef customHemogenPack;
-    }
 
+        private static readonly Dictionary<Def, XenotypeExtension> cache = new Dictionary<Def, XenotypeExtension>();
+        public static XenotypeExtension GetFor(Def def)
+        {
+            if (def == null) return null;
+            if (cache.TryGetValue(def, out var ext)) return ext;
+            return cache[def] = def.GetModExtension<XenotypeExtension>();
+        }
+    }
 
     [HarmonyPatch(typeof(PawnApparelGenerator), "GenerateStartingApparelFor")]
     public static class PawnApparelGenerator_GenerateStartingApparelFor_Patch
@@ -34,14 +32,26 @@ namespace XenotypeRestrictions
             var xenotype = pawn.genes?.xenotype;
             if (xenotype != null)
             {
-                staticList = PawnApparelGenerator.allApparelPairs.Where(x => x.thing.CanWear(xenotype) is false).ToList();
-                PawnApparelGenerator.allApparelPairs.RemoveAll(x => staticList.Contains(x));
+                var allPairs = PawnApparelGenerator.allApparelPairs;
+                int writeIdx = 0;
+                for (int i = 0; i < allPairs.Count; i++)
+                {
+                    if (allPairs[i].thing.CanWear(xenotype))
+                    {
+                        allPairs[writeIdx++] = allPairs[i];
+                    }
+                    else
+                    {
+                        staticList.Add(allPairs[i]);
+                    }
+                }
+                allPairs.RemoveRange(writeIdx, allPairs.Count - writeIdx);
             }
         }
 
         public static bool CanWear(this ThingDef apparel, XenotypeDef def)
         {
-            var extension = apparel.GetModExtension<XenotypeExtension>();
+            var extension = XenotypeExtension.GetFor(apparel);
             if (extension?.exclusiveXenotypes != null)
             {
                 return extension.exclusiveXenotypes.Contains(def);
@@ -51,7 +61,7 @@ namespace XenotypeRestrictions
 
         public static void Postfix()
         {
-            if (staticList.Any())
+            if (staticList.Count > 0)
             {
                 PawnApparelGenerator.allApparelPairs.AddRange(staticList);
                 staticList.Clear();
@@ -73,7 +83,7 @@ namespace XenotypeRestrictions
                 }
                 if (def != null)
                 {
-                    if (def.CanWear(pawn.genes.xenotype) is false)
+                    if (def.CanWear(pawn.genes?.xenotype) is false)
                     {
                         __result = false;
                     }
@@ -130,7 +140,7 @@ namespace XenotypeRestrictions
         {
             if (naturalPart != null)
             {
-                var xenotype = pawn.genes?.xenotype?.GetModExtension<XenotypeExtension>();
+                var xenotype = XenotypeExtension.GetFor(pawn.genes?.xenotype);
                 if (xenotype != null)
                 {
                     if (xenotype.overridenSpawnedParts != null && xenotype.overridenSpawnedParts.TryGetValue(naturalPart, out var otherPart))
@@ -149,7 +159,7 @@ namespace XenotypeRestrictions
         public static void Prefix(Pawn pawn, out ThingDef __state)
         {
             __state = ThingDefOf.HemogenPack;
-            var xenotype = pawn.genes?.xenotype?.GetModExtension<XenotypeExtension>();
+            var xenotype = XenotypeExtension.GetFor(pawn.genes?.xenotype);
             if (xenotype?.customHemogenPack != null)
             {
                 ThingDefOf.HemogenPack = xenotype.customHemogenPack;
