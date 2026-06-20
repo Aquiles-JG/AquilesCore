@@ -52,8 +52,12 @@ namespace AquilesCore
                     var statPart = new StatPart_FacilityJobBonus();
                     statPart.parentStat = stat;
                     stat.parts.Add(statPart);
+                    if (stat.immutable)
+                    {
+                        stat.immutable = false;
+                        stat.Worker.SetCacheability(stat.immutable);
+                    }
                 }
-                StatDef.SetImmutability();
             }
         }
     }
