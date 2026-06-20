@@ -5,9 +5,11 @@ namespace AquilesCore
 {
     public class PatchOperationToggle : PatchOperation
     {
-        private string toggle;
-        private PatchOperation match;
-        private PatchOperation nomatch;
+        #pragma warning disable CS0649
+    	private string toggle;
+    	private PatchOperation match;
+    	private PatchOperation nomatch;
+        #pragma warning restore CS0649
 
         public override bool ApplyWorker(XmlDocument xml)
         {

@@ -45,6 +45,15 @@ namespace AquilesCore
                         }
                     }
                 }
+
+                foreach (var stat in JobBonusStats)
+                {
+                    stat.parts ??=new List<StatPart>();
+                    var statPart = new StatPart_FacilityJobBonus();
+                    statPart.parentStat = stat;
+                    stat.parts.Add(statPart);
+                }
+                StatDef.SetImmutability();
             }
         }
     }
