@@ -1,7 +1,7 @@
-﻿using RimWorld;
+using RimWorld;
 using Verse;
 
-namespace HediffRemover
+namespace AquilesCore
 {
     public class IngestionOutcomeDoer_Immunity : IngestionOutcomeDoer
     {

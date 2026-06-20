@@ -2,6 +2,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 using System;
+namespace AquilesCore;
 
 [HotSwappable]
 public class ITab_FuelFilter : ITab

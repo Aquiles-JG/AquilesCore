@@ -1,9 +1,16 @@
-using HarmonyLib;
 using System.Collections.Generic;
+using HarmonyLib;
 using Verse;
 
 namespace AquilesCore
 {
+    public class SmeltableExtension : DefModExtension
+    {
+        public int? randomSmeltProductsCount;
+        public bool allowDuplicateItems = true;
+        public bool guaranteeFirstProduct = false;
+    }
+
     [HarmonyPatch(typeof(Thing), "SmeltProducts")]
     public static class Thing_SmeltProducts_Patch
     {
@@ -13,14 +20,11 @@ namespace AquilesCore
             if (extension != null && extension.randomSmeltProductsCount.HasValue && __instance.def.smeltProducts != null)
             {
                 var originalProducts = __instance.def.smeltProducts;
-                // Ensure count > 0 to avoid errors later
                 if (originalProducts != null && originalProducts.Count > 0 && extension.randomSmeltProductsCount.Value > 0)
                 {
                     var selectedProducts = new List<Thing>();
                     var availableProducts = new List<ThingDefCountClass>(originalProducts);
                     int picksRemaining = extension.randomSmeltProductsCount.Value;
-
-                    // Handle guaranteed first product
                     if (extension.guaranteeFirstProduct)
                     {
                         var firstProductDefCount = availableProducts[0];
@@ -29,27 +33,23 @@ namespace AquilesCore
                         selectedProducts.Add(firstThing);
                         if (extension.allowDuplicateItems is false)
                         {
-                            availableProducts.RemoveAt(0); // Remove the first item from available pool
+                            availableProducts.RemoveAt(0);
                         }
                         picksRemaining--;
                     }
 
-                    // Randomly select remaining products
                     for (int i = 0; i < picksRemaining; i++)
                     {
-                        // Check if there are still products available, especially if duplicates aren't allowed
                         if (availableProducts.Count == 0)
                         {
-                            break; // No more products to pick from
+                            break;
                         }
 
                         var productDefCount = availableProducts.RandomElement();
                         if (extension.allowDuplicateItems)
                         {
-                            // If duplicates not allowed, pick and remove
                             availableProducts.Remove(productDefCount);
                         }
-                        // Create and add the thing
                         var thing = ThingMaker.MakeThing(productDefCount.thingDef);
                         thing.stackCount = productDefCount.count;
                         selectedProducts.Add(thing);

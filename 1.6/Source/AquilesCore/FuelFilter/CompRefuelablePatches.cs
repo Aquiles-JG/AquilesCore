@@ -1,18 +1,16 @@
 using System.Collections.Generic;
 using System.Reflection;
 using System.Reflection.Emit;
-using AquilesCore;
 using HarmonyLib;
 using RimWorld;
-using Verse;
+namespace AquilesCore;
 
 [HarmonyPatch]
-public static partial class CompRefuelablePatches
+public static class CompRefuelablePatches
 {
     public static float ModifyFuelConsumptionRate(float originalRate, CompRefuelable instance)
     {
-        // Get the current fuel definition
-        ThingDef fuelDef = instance.GetFuelThingDef();
+        var fuelDef = instance.GetFuelThingDef();
         if (fuelDef != null)
         {
             float fuelPower = fuelDef.GetStatValueAbstract(DefsOf.Aq_FuelPower);
@@ -37,7 +35,7 @@ public static partial class CompRefuelablePatches
             yield return instruction;
             if (instruction.LoadsField(typeof(CompProperties_Refuelable).GetField(nameof(CompProperties_Refuelable.fuelConsumptionRate))))
             {
-                yield return new CodeInstruction(OpCodes.Ldarg_0); // Load CompRefuelable instance
+                yield return new CodeInstruction(OpCodes.Ldarg_0);
                 yield return CodeInstruction.Call(typeof(CompRefuelablePatches), nameof(ModifyFuelConsumptionRate));
             }
         }

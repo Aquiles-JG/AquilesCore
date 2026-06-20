@@ -1,11 +1,10 @@
 using System.Collections.Generic;
 using RimWorld;
 using Verse;
-
+namespace AquilesCore;
 public static class RefuelTrackingHelper
 {
     private static readonly Dictionary<CompRefuelable, CustomFuelData> fuelData = new();
-    public static Thing currentRefuelableThing;
     public static CustomFuelData GetFuelData(this CompRefuelable instance)
     {
         if (!fuelData.TryGetValue(instance, out var data))

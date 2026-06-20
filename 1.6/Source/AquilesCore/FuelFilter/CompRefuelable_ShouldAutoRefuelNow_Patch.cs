@@ -1,6 +1,6 @@
 using HarmonyLib;
 using RimWorld;
-using Verse;
+namespace AquilesCore;
 
 [HarmonyPatch(typeof(CompRefuelable), nameof(CompRefuelable.ShouldAutoRefuelNow), MethodType.Getter)]
 public static class CompRefuelable_ShouldAutoRefuelNow_Patch

@@ -1,4 +1,4 @@
-﻿using HarmonyLib;
+using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +7,8 @@ using System.Xml;
 using UnityEngine;
 using Verse;
 
-namespace BiomeCondition
+namespace AquilesCore
 {
-    public class BiomeConditionMod : Mod
-    {
-        public BiomeConditionMod(ModContentPack pack) : base(pack)
-        {
-			new Harmony("BiomeConditionMod").PatchAll();
-        }
-    }
     public class MineableExtension : DefModExtension
     {
         public List<BiomeRecord> adjustToMineableScatterCommonality;

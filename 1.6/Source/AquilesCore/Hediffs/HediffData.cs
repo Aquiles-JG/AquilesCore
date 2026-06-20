@@ -1,7 +1,6 @@
-﻿using HarmonyLib;
 using Verse;
 
-namespace HediffRemover
+namespace AquilesCore
 {
     public class HediffData
     {
