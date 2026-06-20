@@ -11,7 +11,7 @@
     <tendable>false</tendable>
     <scenarioCanAdd>false</scenarioCanAdd>
     <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
-    <priceOffset>250</priceOffset>
+    <priceOffset>150</priceOffset>
     <stages>
       <li>
         <label></label>
@@ -47,7 +47,7 @@
     <tendable>false</tendable>
     <scenarioCanAdd>false</scenarioCanAdd>
     <allowMothballIfLowPriorityWorldPawn>true</allowMothballIfLowPriorityWorldPawn>
-    <priceOffset>-250</priceOffset>
+    <priceOffset>-150</priceOffset>
     <stages>
       <li>
         <label></label>
