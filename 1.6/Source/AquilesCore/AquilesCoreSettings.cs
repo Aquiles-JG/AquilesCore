@@ -29,6 +29,11 @@ namespace AquilesCore
                 var xenotypes = DefDatabase<XenotypeDef>.AllDefs.OrderBy(x => x.label).ToList();
                 for (int i = 0; i < xenotypes.Count; i++)
                 {
+                    if (i % 2 == 0)
+                    {
+                        Widgets.DrawLightHighlight(listing.GetRect(24));
+                        listing.curY -= 24;
+                    }
                     var xenotype = xenotypes[i];
                     var excluded = xenotypeBlacklist.Contains(xenotype.defName);
                     listing.CheckboxLabeled(xenotype.LabelCap, ref excluded);
