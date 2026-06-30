@@ -23,7 +23,6 @@ namespace AquilesCore
             listing.Begin(viewRect);
             listing.CheckboxLabeled("AC_BeautyMattersToggle".Translate(), ref beautyMatters, "AC_BeautyMattersToggleDesc".Translate());
             listing.CheckboxLabeled("AC_BodyTypeMattersToggle".Translate(), ref bodyTypeMatters, "AC_BodyTypeMattersToggleDesc".Translate());
-            defaultFuelSearchRadius = Mathf.RoundToInt(listing.SliderLabeled("AC_DefaultFuelSearchRadius".Translate(defaultFuelSearchRadius), defaultFuelSearchRadius, 1f, 100f, 0.6f, "AC_DefaultFuelSearchRadiusDesc".Translate()));
             if (bodyTypeMatters)
             {
                 listing.Gap();
@@ -49,6 +48,7 @@ namespace AquilesCore
                     }
                 }
             }
+            defaultFuelSearchRadius = Mathf.RoundToInt(listing.SliderLabeled("AC_DefaultFuelSearchRadius".Translate(defaultFuelSearchRadius), defaultFuelSearchRadius, 1f, 100f, 0.4f, "AC_DefaultFuelSearchRadiusDesc".Translate()));
             listing.End();
             settingsHeight = listing.CurHeight;
             Widgets.EndScrollView();
