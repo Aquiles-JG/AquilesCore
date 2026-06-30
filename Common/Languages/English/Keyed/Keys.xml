@@ -20,5 +20,7 @@
 	<AC_BeautyMattersToggleDesc>When enabled, pawn beauty affects social stats, relations, and thoughts. Disable to revert to vanilla beauty behaviour.</AC_BeautyMattersToggleDesc>
 	<AC_BodyTypeMattersToggle>Body type matters</AC_BodyTypeMattersToggle>
 	<AC_BodyTypeMattersToggleDesc>When enabled, a pawn's body type (hulk, fat, thin) applies stat modifiers. Disable to revert to vanilla behaviour. Recommendation: exclude xenotypes with only one body type option for balance purposes.</AC_BodyTypeMattersToggleDesc>
+	<AC_DefaultFuelSearchRadius>Default fuel search radius: {0}</AC_DefaultFuelSearchRadius>
+	<AC_DefaultFuelSearchRadiusDesc>The default search radius used when pawns look for fuel to refill buildings.</AC_DefaultFuelSearchRadiusDesc>
 	<AC_XenotypeBlacklistHeader>Excluded xenotypes (these will not receive body type modifiers):</AC_XenotypeBlacklistHeader>
 </LanguageData>

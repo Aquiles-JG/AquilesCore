@@ -10,6 +10,7 @@ namespace AquilesCore
     {
         public bool beautyMatters = true;
         public bool bodyTypeMatters = true;
+        public int defaultFuelSearchRadius = 25;
         public List<string> xenotypeBlacklist = new List<string>();
         private Vector2 scrollPosition;
         private float settingsHeight;
@@ -22,6 +23,7 @@ namespace AquilesCore
             listing.Begin(viewRect);
             listing.CheckboxLabeled("AC_BeautyMattersToggle".Translate(), ref beautyMatters, "AC_BeautyMattersToggleDesc".Translate());
             listing.CheckboxLabeled("AC_BodyTypeMattersToggle".Translate(), ref bodyTypeMatters, "AC_BodyTypeMattersToggleDesc".Translate());
+            defaultFuelSearchRadius = Mathf.RoundToInt(listing.SliderLabeled("AC_DefaultFuelSearchRadius".Translate(defaultFuelSearchRadius), defaultFuelSearchRadius, 1f, 100f, 0.6f, "AC_DefaultFuelSearchRadiusDesc".Translate()));
             if (bodyTypeMatters)
             {
                 listing.Gap();
@@ -56,6 +58,7 @@ namespace AquilesCore
         {
             Scribe_Values.Look(ref beautyMatters, "beautyMatters", true);
             Scribe_Values.Look(ref bodyTypeMatters, "bodyTypeMatters", true);
+            Scribe_Values.Look(ref defaultFuelSearchRadius, "defaultFuelSearchRadius", 25);
             Scribe_Collections.Look(ref xenotypeBlacklist, "xenotypeBlacklist", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
