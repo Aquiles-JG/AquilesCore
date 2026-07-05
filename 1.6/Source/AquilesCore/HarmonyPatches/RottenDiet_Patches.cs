@@ -115,8 +115,16 @@ namespace AquilesCore
                         var compRot = corpse.TryGetComp<CompRottable>();
                         if (compRot != null)
                         {
-                            if (compRot.Stage == RotStage.Rotting && RottenDietUtility.CanEatRotten(eater)) return false;
-                            if (compRot.Stage == RotStage.Dessicated && RottenDietUtility.CanEatBones(eater)) return false;
+                            if (compRot.Stage == RotStage.Rotting && RottenDietUtility.CanEatRotten(eater))
+                            {
+                                val *= RottenNutritionFactor;
+                                return false;
+                            }
+                            if (compRot.Stage == RotStage.Dessicated && RottenDietUtility.CanEatBones(eater))
+                            {
+                                val *= DessicatedNutritionFactor;
+                                return false;
+                            }
                         }
                     }
                 }
@@ -242,26 +250,7 @@ namespace AquilesCore
 
             public static void Postfix(Pawn eater, Thing food, ref float __result)
             {
-                if (food is Corpse corpse)
-                {
-                    var compRot = corpse.TryGetComp<CompRottable>();
-                    if (compRot == null || compRot.Stage == RotStage.Fresh)
-                    {
-                        return;
-                    }
-
-                    var freshNut = corpse.GetStatValue(StatDefOf.Nutrition);
-
-                    if (compRot.Stage == RotStage.Rotting && RottenDietUtility.CanEatRotten(eater))
-                    {
-                        __result = freshNut * RottenNutritionFactor;
-                    }
-                    else if (compRot.Stage == RotStage.Dessicated && RottenDietUtility.CanEatBones(eater))
-                    {
-                        __result = freshNut * DessicatedNutritionFactor;
-                    }
-                }
-                else if (RottenDietUtility.IsBoneDef(food.def) && RottenDietUtility.CanEatBones(eater))
+                if (RottenDietUtility.IsBoneDef(food.def) && RottenDietUtility.CanEatBones(eater))
                 {
                     __result = BoneNutritionValue;
                 }
