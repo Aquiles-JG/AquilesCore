@@ -151,9 +151,13 @@ namespace AquilesCore
         {
             public static Pawn eater;
 
-            public static void Prefix(Pawn eater)
+            public static void Prefix(Pawn eater, ref bool allowCorpse)
             {
+                if (eater is null) return;
                 FoodUtility_TryFindBestFoodSourceFor_Patch.eater = eater;
+                var canEatRotten = RottenDietUtility.CanEatRotten(eater);
+                var canEatBones = RottenDietUtility.CanEatBones(eater);
+                if (canEatBones || canEatRotten) allowCorpse = true;
             }
 
             public static void Finalizer()
