@@ -1,8 +1,10 @@
 using System;
+using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
 using Verse;
 using Verse.AI;
+using static RimWorld.FoodUtility;
 
 namespace AquilesCore
 {
@@ -151,9 +153,9 @@ namespace AquilesCore
                 eater = null;
             }
 
-            public static void Postfix(Pawn getter, Pawn eater, ref Thing foodSource, ref ThingDef foodDef, bool allowForbidden, bool allowCorpse, ref bool __result)
+            public static void Postfix(Pawn getter, Pawn eater, ref Thing foodSource, ref ThingDef foodDef, bool allowForbidden, ref bool __result)
             {
-                if (__result || !allowCorpse || eater == null) return;
+                if (__result || eater == null) return;
 
                 var canEatRotten = RottenDietUtility.CanEatRotten(eater);
                 var canEatBones = RottenDietUtility.CanEatBones(eater);
@@ -262,6 +264,23 @@ namespace AquilesCore
                 else if (RottenDietUtility.IsBoneDef(food.def) && RottenDietUtility.CanEatBones(eater))
                 {
                     __result = BoneNutritionValue;
+                }
+            }
+        }
+
+        [HarmonyPatch(typeof(FoodUtility), nameof(FoodUtility.ThoughtsFromIngesting))]
+        public static class FoodUtility_ThoughtsFromIngesting_Patch
+        {
+            public static void Postfix(Pawn ingester, Thing foodSource, ref List<ThoughtFromIngesting> __result)
+            {
+                if (foodSource is not Corpse corpse) return;
+                var compRot = corpse.TryGetComp<CompRottable>();
+                if (compRot == null || compRot.Stage == RotStage.Fresh) return;
+
+                if ((compRot.Stage == RotStage.Rotting && RottenDietUtility.CanEatRotten(ingester))
+                    || (compRot.Stage == RotStage.Dessicated && RottenDietUtility.CanEatBones(ingester)))
+                {
+                    __result.RemoveAll(t => t.thought.stages[0].baseMoodEffect < 0f);
                 }
             }
         }
