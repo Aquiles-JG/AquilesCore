@@ -1,3 +1,4 @@
+using System;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -274,6 +275,23 @@ namespace AquilesCore
                 {
                     __result = 0f;
                 }
+            }
+        }
+
+        [HarmonyPatch(typeof(FloatMenuMakerMap), nameof(FloatMenuMakerMap.GetProviderOptions))]
+        public static class FloatMenuMakerMap_GetProviderOptions_Patch
+        {
+            public static void Prefix(FloatMenuContext context)
+            {
+                if (context.FirstSelectedPawn != null)
+                {
+                    JobDriver_DriverTick_Patch.eater = context.FirstSelectedPawn;
+                }
+            }
+
+            public static void Postfix()
+            {
+                JobDriver_DriverTick_Patch.eater = null;
             }
         }
     }
