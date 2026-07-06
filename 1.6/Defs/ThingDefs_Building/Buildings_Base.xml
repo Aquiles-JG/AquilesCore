@@ -20,6 +20,7 @@
     <passability>PassThroughOnly</passability>
     <fillPercent>0.5</fillPercent>
     <pathCost>70</pathCost>
+    <canOverlapZones>false</canOverlapZones>
     <minifiedDef>MinifiedThing</minifiedDef>
 </ThingDef>
 
