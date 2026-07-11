@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Defs>
-
+<Defs> 
   <HediffDef>
     <defName>Aq_MindConfusion</defName>
     <label>utterly confused</label>
@@ -56,5 +55,4 @@
       </li>
     </stages>
   </HediffDef>
-  
 </Defs>
