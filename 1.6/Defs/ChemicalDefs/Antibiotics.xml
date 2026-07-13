@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ChemicalDef>
+    <defName>Aq_Antibiotics</defName>
+    <label>antibiotics</label>
+    <addictionHediff>Aq_AntibioticsAddiction</addictionHediff>
+    <toleranceHediff>Aq_AntibioticsTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+  </ChemicalDef>
+  
+  <NeedDef ParentName="DrugAddictionNeedBase">
+    <defName>Aq_Chemical_Antibiotics</defName>
+    <needClass>Need_Chemical</needClass>
+    <label>antibiotics</label>
+    <description>Because of an antibiotics addiction, this person needs to regularly consume antibiotics to avoid withdrawal symptoms.</description>
+    <listPriority>35</listPriority>
+  </NeedDef>
+</Defs>
