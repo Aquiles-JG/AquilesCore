@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Defs> 
-  <HediffDef MayRequireAnyOf="Aquiles.Alchemy,Aquiles.Dwarves" ParentName="DrugToleranceBase">
+  <HediffDef ParentName="DrugToleranceBase" MayRequireAnyOf="Aquiles.Alchemy,Aquiles.Dwarves">
     <defName>Aq_AntibioticsTolerance</defName>
     <label>antibiotics tolerance</label>
     <description>A built-up tolerance to antibiotics. The more severe this tolerance is, the more antibiotics it takes to get the same effect.</description>
@@ -14,7 +14,7 @@
     </comps>
   </HediffDef>
   
-  <HediffDef MayRequireAnyOf="Aquiles.Alchemy,Aquiles.Dwarves" ParentName="AddictionBase">
+  <HediffDef ParentName="AddictionBase" MayRequireAnyOf="Aquiles.Alchemy,Aquiles.Dwarves">
     <defName>Aq_AntibioticsAddiction</defName>
     <label>antibiotics addiction</label>
     <description>A chemical addiction to antibiotics. Without regular doses of antibiotics, withdrawal symptoms will begin. However, extended abstinence will force the brain to adapt back to its normal state, resolving the addiction.</description>

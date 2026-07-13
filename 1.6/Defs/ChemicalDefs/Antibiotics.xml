@@ -8,7 +8,7 @@
     <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
   </ChemicalDef>
   
-  <NeedDef MayRequireAnyOf="Aquiles.Alchemy,Aquiles.Dwarves" ParentName="DrugAddictionNeedBase">
+  <NeedDef ParentName="DrugAddictionNeedBase" MayRequireAnyOf="Aquiles.Alchemy,Aquiles.Dwarves">
     <defName>Aq_Chemical_Antibiotics</defName>
     <needClass>Need_Chemical</needClass>
     <label>antibiotics</label>
