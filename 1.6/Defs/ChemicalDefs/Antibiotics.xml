@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <ChemicalDef>
+  <ChemicalDef MayRequireAnyOf="Aquiles.Alchemy,Aquiles.Dwarves">
     <defName>Aq_Antibiotics</defName>
     <label>antibiotics</label>
     <addictionHediff>Aq_AntibioticsAddiction</addictionHediff>
@@ -8,7 +8,7 @@
     <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
   </ChemicalDef>
   
-  <NeedDef ParentName="DrugAddictionNeedBase">
+  <NeedDef MayRequireAnyOf="Aquiles.Alchemy,Aquiles.Dwarves" ParentName="DrugAddictionNeedBase">
     <defName>Aq_Chemical_Antibiotics</defName>
     <needClass>Need_Chemical</needClass>
     <label>antibiotics</label>
