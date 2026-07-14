@@ -28,6 +28,8 @@
     </comps>
     <stages>
       <li>
+      </li>
+      <li>
         <label>withdrawal</label>
         <restFallFactorOffset>0.25</restFallFactorOffset>
         <socialFightChanceFactor>2.5</socialFightChanceFactor>

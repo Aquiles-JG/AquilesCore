@@ -6,6 +6,8 @@
     <addictionHediff>Aq_AntibioticsAddiction</addictionHediff>
     <toleranceHediff>Aq_AntibioticsTolerance</toleranceHediff>
     <onGeneratedAddictedToleranceChance>0.8</onGeneratedAddictedToleranceChance>
+    <geneToleranceBuildupFactorResist>0.5</geneToleranceBuildupFactorResist>
+    <geneToleranceBuildupFactorImmune>0</geneToleranceBuildupFactorImmune>
   </ChemicalDef>
   
   <NeedDef ParentName="DrugAddictionNeedBase" MayRequireAnyOf="Aquiles.Alchemy,Aquiles.Dwarves">
