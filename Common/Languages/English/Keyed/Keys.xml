@@ -24,7 +24,7 @@
 	<AC_DefaultFuelSearchRadiusDesc>The default search radius used when pawns look for fuel to refill buildings.</AC_DefaultFuelSearchRadiusDesc>
 	<AC_XenotypeBlacklistHeader>Excluded xenotypes (these will not receive body type modifiers):</AC_XenotypeBlacklistHeader>
 	<AC_FuelUIToggle>Fuel UI</AC_FuelUIToggle>
-	<AC_FuelUIToggleDesc>Enable the fuel filter tab and gizmos. Disable if another mod (e.g. Medieval Overhaul) provides its own fuel UI to avoid conflicts. Needs to restart the game.</AC_FuelUIToggleDesc>
+	<AC_FuelUIToggleDesc>Enable the custom fuel filter tab and gizmos. Toggle off if another mod provides its own fuel UI to avoid conflicts. Needs to restart RimWorld to take effect.</AC_FuelUIToggleDesc>
 	<Aq_PassionSerumGained>{0} gained a passion for {1}.</Aq_PassionSerumGained>
 	<Aq_PassionSerumXp>{0} already had a burning passion for {1}. Instead, {0} gained skill experience ({2} -> {3}).</Aq_PassionSerumXp>
 	<Aq_PassionSerumNoSkill>{0} had no skills that could receive a passion. The serum was wasted.</Aq_PassionSerumNoSkill>
