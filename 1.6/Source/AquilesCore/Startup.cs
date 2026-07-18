@@ -16,7 +16,7 @@ namespace AquilesCore
             foreach (var thingDef in DefDatabase<ThingDef>.AllDefs)
             {
                 var compProps = thingDef.GetCompProperties<CompProperties_Refuelable>();
-                if (compProps != null)
+                if (compProps != null && AquilesCoreMod.settings.fuelUIEnabled)
                 {
                     thingDef.inspectorTabs ??= new List<Type>();
                     thingDef.inspectorTabs.Add(typeof(ITab_FuelFilter));
@@ -48,7 +48,7 @@ namespace AquilesCore
 
                 foreach (var stat in JobBonusStats)
                 {
-                    stat.parts ??=new List<StatPart>();
+                    stat.parts ??= new List<StatPart>();
                     var statPart = new StatPart_FacilityJobBonus();
                     statPart.parentStat = stat;
                     stat.parts.Add(statPart);

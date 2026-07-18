@@ -23,4 +23,6 @@
 	<AC_DefaultFuelSearchRadius>Default fuel search radius: {0}</AC_DefaultFuelSearchRadius>
 	<AC_DefaultFuelSearchRadiusDesc>The default search radius used when pawns look for fuel to refill buildings.</AC_DefaultFuelSearchRadiusDesc>
 	<AC_XenotypeBlacklistHeader>Excluded xenotypes (these will not receive body type modifiers):</AC_XenotypeBlacklistHeader>
+	<AC_FuelUIToggle>Fuel UI</AC_FuelUIToggle>
+	<AC_FuelUIToggleDesc>Show the custom AquilesCore fuel filter tab and gizmos. Disable if another mod (e.g. Medieval Overhaul) provides its own fuel UI to avoid conflicts.</AC_FuelUIToggleDesc>
 </LanguageData>

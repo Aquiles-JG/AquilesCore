@@ -10,6 +10,7 @@ namespace AquilesCore
     {
         public bool beautyMatters = true;
         public bool bodyTypeMatters = true;
+        public bool fuelUIEnabled = true;
         public int defaultFuelSearchRadius = 25;
         public List<string> xenotypeBlacklist = new List<string>();
         private Vector2 scrollPosition;
@@ -23,6 +24,7 @@ namespace AquilesCore
             listing.Begin(viewRect);
             listing.CheckboxLabeled("AC_BeautyMattersToggle".Translate(), ref beautyMatters, "AC_BeautyMattersToggleDesc".Translate());
             listing.CheckboxLabeled("AC_BodyTypeMattersToggle".Translate(), ref bodyTypeMatters, "AC_BodyTypeMattersToggleDesc".Translate());
+            listing.CheckboxLabeled("AC_FuelUIToggle".Translate(), ref fuelUIEnabled, "AC_FuelUIToggleDesc".Translate());
             if (bodyTypeMatters)
             {
                 listing.Gap();
@@ -58,6 +60,7 @@ namespace AquilesCore
         {
             Scribe_Values.Look(ref beautyMatters, "beautyMatters", true);
             Scribe_Values.Look(ref bodyTypeMatters, "bodyTypeMatters", true);
+            Scribe_Values.Look(ref fuelUIEnabled, "fuelUIEnabled", true);
             Scribe_Values.Look(ref defaultFuelSearchRadius, "defaultFuelSearchRadius", 25);
             Scribe_Collections.Look(ref xenotypeBlacklist, "xenotypeBlacklist", LookMode.Value);
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
